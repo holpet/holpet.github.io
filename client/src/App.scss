@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --font-title: "La Belle", sans-serif;
+  --font-base: "Open Sans", sans-serif;
+
+  --primary-color: #91c4f2;
+  --primaryGrad-color: #8ca0d7;
+  --secondary-color: #b457b3;
+  --secondaryGrad-color: #9d79bc;
+  --white-color: #fffbfc;
+  --lighterBlack-color: #1d1d1d;
+  --black-color: #071013;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #857885;
+  --darkGray-color: #3f3f3f;
+  --darkerGray-color: #3a3a3a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  color: var(--white-color);
+}
+
+body {
+  background-color: var(--lighterBlack-color);
+}
+
+// Grid layout
+.app-navbar {
+  grid-area: navig;
+  background-color: var(--black-color);
+  font-family: var(--font-title);
+}
+.app-content {
+  grid-area: content;
+  font-family: var(--font-base);
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-columns: 230px auto;
+  grid-template-areas: "navig content";
+}
+@media (max-width: 500px) {
+  .app-wrapper {
+    grid-template-columns: 100%;
+    grid-template-areas: "navig" "content";
+  }
+}

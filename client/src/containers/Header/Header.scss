@@ -1,0 +1,13 @@
+#menu {
+  display: none;
+}
+
+#menu:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  #menu {
+    display: block;
+  }
+}

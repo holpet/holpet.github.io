@@ -1,0 +1,21 @@
+.hidden {
+  opacity: 0;
+}
+
+div {
+  overflow-x: visible;
+  position: relative;
+}
+div:hover > img {
+  transform: rotate(-10deg);
+}
+
+img {
+  width: 9rem;
+  height: auto;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+.logo1 {
+  position: absolute;
+}
