@@ -12,14 +12,20 @@ const Navbar = () => {
   return (
     <aside className={`navbar ${!isClosed && "show"}`}>
       <div className="navbar-wrapper">
-        <Close id="close" onClick={() => setIsClosed(true)} />
+        <Close
+          id="close"
+          onClick={() => {
+            setIsClosed(true);
+            console.log("closed...");
+          }}
+        />
 
         <div className="logo-section">
           <a rel="home" href="/">
             <Logo />
             <span>HolPet</span>
           </a>
-          <span>Web Developer</span>
+          <span>&lt;WebDev&gt;</span>
         </div>
 
         <nav className="nav-links">

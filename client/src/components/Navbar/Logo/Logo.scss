@@ -6,11 +6,11 @@ div {
   overflow-x: visible;
   position: relative;
 }
-div:hover > img {
+div.logo:hover > img {
   transform: rotate(-10deg);
 }
 
-img {
+div > img {
   width: 9rem;
   height: auto;
   opacity: 1;

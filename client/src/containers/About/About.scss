@@ -1,0 +1,113 @@
+div.about {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: clamp(20px, 3.5vw, 55px);
+}
+
+div.about__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  //position: relative;
+}
+
+div.about__wrapper > div:first-child {
+  position: relative;
+  left: 50vw;
+  top: -17vw;
+  transform: rotate(-45deg);
+}
+
+.dashed-line {
+  position: absolute;
+  border: none;
+  border-top: 3px var(--gray-color) dashed;
+  z-index: 2;
+}
+
+div.about__wrapper > div:first-child > div > hr:nth-child(1) {
+  @extend .dashed-line;
+  width: clamp(0.3rem, 5vw, 5rem);
+  transform: rotate(-15deg);
+  left: 2vw;
+  top: 20vw;
+}
+div.about__wrapper > div:first-child > div > hr:nth-child(2) {
+  @extend .dashed-line;
+  width: clamp(4rem, 20vw, 20rem);
+  transform: rotate(-59deg);
+  left: 2vw;
+  top: 11vw;
+}
+
+div.about__wrapper > div:first-child > img {
+  content: url("./../../assets/bunnyTitle5.svg");
+  width: clamp(10rem, 50vw, 55rem);
+  height: auto;
+  position: absolute;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
+  user-select: none;
+}
+
+@media (min-width: 1900px) {
+  div.about__wrapper > div:first-child {
+    top: -10vw;
+  }
+}
+
+@media (min-width: 1601px) {
+  div.about__wrapper > div:first-child > img {
+    content: url("./../../assets/bunnyTitle6.svg");
+  }
+  div.about__wrapper > div:first-child > div > hr:nth-child(1),
+  div.about__wrapper > div:first-child > div > hr:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (min-width: 1301px) {
+  div.about__wrapper > div:first-child {
+    left: 40vw;
+  }
+}
+
+@media (max-width: 300px) {
+  div.about__wrapper > div:first-child > img {
+    content: url("./../../assets/bunnyTitle6.svg");
+  }
+  div.about__wrapper > div:first-child > div > hr:nth-child(1),
+  div.about__wrapper > div:first-child > div > hr:nth-child(2) {
+    display: none;
+  }
+}
+
+div.about__textWrapper {
+  position: relative;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+p.about__hand {
+  font-family: var(--font-handWritten);
+  font-size: clamp(0.8rem, 3vw, 2rem);
+  color: var(--gray-color);
+}
+
+p.about__greeting {
+  font-size: clamp(1.2rem, 8vw, 5rem);
+  font-weight: bolder;
+}
+
+p.about__name {
+  font-size: clamp(1.2rem, 8vw, 4.8rem);
+  font-weight: bolder;
+}
+
+p.about__title {
+  font-size: clamp(0.7rem, 2.8vw, 1.7rem);
+  color: var(--gray-color);
+}

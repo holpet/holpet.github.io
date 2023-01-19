@@ -2,12 +2,13 @@
   display: none;
 }
 
-#menu:hover {
-  cursor: pointer;
-}
-
-@media (max-width: 500px) {
+@media (max-width: 1300px) {
   #menu {
     display: block;
+    text-align: right;
+  }
+
+  #menu:hover {
+    cursor: pointer;
   }
 }
