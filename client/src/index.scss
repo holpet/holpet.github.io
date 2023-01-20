@@ -17,7 +17,7 @@
   --font-title: "La Belle", sans-serif;
   --font-base: "Open Sans", sans-serif;
   --font-primary: "Playfair Display", sans-serif;
-  --font-secondary: "Cabin";
+  --font-secondary: "Cabin"; // chosen base
   --font-square: "NoCurvesBoustrophedon";
   --font-handWritten: "JennaSue";
 
@@ -32,9 +32,9 @@
   --secondary-gradLight-color: #bf96e3;
 
   // misc
-  --white-color: #fffbfc;
+  --white-color: #fbfeff;
   --lighterBlack-color: #1d1d1d;
-  --black-color: #071013;
+  --black-color: #161616;
   --lightGray-color: #e4e4e4;
   --gray-color: #797979;
   --darkGray-color: #3f3f3f;
@@ -45,15 +45,15 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
   scroll-behavior: smooth;
   color: var(--white-color);
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--lighterBlack-color);
   font-family: var(--font-secondary);
   user-select: none;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }

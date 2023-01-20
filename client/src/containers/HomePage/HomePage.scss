@@ -1,0 +1,235 @@
+@import "../../App.scss";
+
+div.home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: var(--padding-val);
+}
+
+div.home div.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  user-select: none;
+}
+
+/* mixins */
+@mixin bounce-in($waitTime) {
+  animation: wait #{$waitTime}, bounce-in 800ms #{$waitTime};
+}
+@mixin slide-in($waitTime) {
+  animation: wait #{$waitTime}, slide-in 800ms #{$waitTime};
+}
+@mixin fade-in($waitTime) {
+  animation: wait #{$waitTime}, fade-in 1000ms #{$waitTime};
+}
+
+/* IMAGE -------------------------------------------------------- */
+
+div.home div.wrapper > div:first-child {
+  position: relative;
+  left: 50vw;
+  top: max(-17vw, -10vw);
+  transform: rotate(-45deg);
+}
+
+.dashed-line {
+  position: absolute;
+  border: none;
+  border-top: 3px var(--gray-color) dashed;
+  z-index: 2;
+}
+
+div.home div.wrapper > div:first-child > hr:nth-child(1) {
+  @extend .dashed-line;
+  width: clamp(0.3rem, 5vw, 5rem);
+  transform: rotate(-15deg);
+  left: 2vw;
+  top: 20vw;
+  @include fade-in("1100ms");
+}
+div.home div.wrapper > div:first-child > hr:nth-child(2) {
+  @extend .dashed-line;
+  width: clamp(4rem, 20vw, 20rem);
+  transform: rotate(-59deg);
+  left: 2vw;
+  top: 11vw;
+  @include fade-in("1400ms");
+}
+
+div.home div.wrapper > div:first-child > img {
+  content: url("./../../assets/bunnyTitle5.svg");
+  width: clamp(10rem, 50vw, 55rem);
+  height: auto;
+  position: absolute;
+  @include slide-in("1400ms");
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0) 80%
+  );
+}
+
+@media (min-width: 1601px) {
+  div.home div.wrapper > div:first-child > img {
+    content: url("./../../assets/bunnyTitle6.svg");
+  }
+  div.home div.wrapper > div:first-child > hr:nth-child(1),
+  div.home div.wrapper > div:first-child > hr:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (min-width: 1301px) {
+  div.home div.wrapper > div:first-child {
+    left: 40vw;
+  }
+}
+
+@media (max-width: 300px) {
+  div.home div.wrapper > div:first-child > img {
+    content: url("./../../assets/bunnyTitle6.svg");
+  }
+  div.home div.wrapper > div:first-child > hr:nth-child(1),
+  div.home div.wrapper > div:first-child > hr:nth-child(2) {
+    display: none;
+  }
+}
+
+/* TEXT --------------------------------------------------------------------- */
+
+div.home div.text-wrapper {
+  position: relative;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+div.home p.code {
+  font-family: var(--font-handWritten);
+  font-size: clamp(0.8rem, 3vw, 2rem);
+  color: var(--gray-color);
+}
+
+div.home p.greeting,
+div.home p.profession {
+  font-size: clamp(1.2rem, 8vw, 5rem);
+  font-weight: bolder;
+}
+div.home p.greeting {
+  @include bounce-in("0ms");
+}
+div.home p.profession {
+  @include bounce-in("600ms");
+}
+
+div.home p.name {
+  font-size: clamp(1.2rem, 8vw, 4.8rem);
+  font-weight: bolder;
+  @include bounce-in("300ms");
+}
+
+div.home p.name > span {
+  @extend .gradient-base;
+  display: inline-block;
+  transform: rotate(0deg);
+  border-bottom: 0px dashed var(--gray-color);
+  transition: transform 250ms ease-in-out;
+}
+div.home p.name > span:nth-child(even) {
+  @include gradText(170deg, 30%, 60%);
+}
+div.home p.name > span:nth-child(odd) {
+  @include gradText(190deg, 48%, 50%);
+}
+div.home p.name > span:nth-child(even):hover {
+  transform: rotate(7deg);
+  border-bottom: 2px dashed var(--gray-color);
+}
+div.home p.name > span:nth-child(odd):hover {
+  transform: rotate(-7deg);
+  border-bottom: 2px dashed var(--gray-color);
+}
+
+div.home p.role {
+  font-size: clamp(0.7rem, 2.8vw, 1.7rem);
+  color: var(--gray-color);
+  @include bounce-in("900ms");
+}
+
+/* ANIMATION gfx */
+
+#arrow {
+  position: absolute;
+  left: 50%;
+  top: 90vh;
+  animation: animate-up-down 1s ease-in-out infinite;
+}
+
+@keyframes animate-up-down {
+  0%,
+  100% {
+    top: 90vh;
+  }
+  50% {
+    top: 93vh;
+  }
+}
+
+@keyframes wait {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    filter: blur(50%);
+    transform: translateX(50%);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0%);
+    transform: translateX(0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    filter: blur(50%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    filter: blur(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

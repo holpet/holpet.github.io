@@ -1,3 +1,5 @@
+@import "../../App.scss";
+
 .navbar {
   width: 100%;
   height: 100%;
@@ -8,6 +10,7 @@
   text-align: center;
   font-size: large;
   background-color: var(--black-color);
+  position: sticky;
 }
 
 @media (max-width: 1300px) {
@@ -15,6 +18,9 @@
     height: 0;
     position: fixed;
     transition: height 250ms ease-in-out;
+  }
+  .navbar-wrapper {
+    top: var(--padding-val);
   }
 
   .show {
@@ -26,7 +32,7 @@
 }
 
 .navbar-wrapper {
-  display: flexbox;
+  display: block;
   flex-direction: column;
   height: 100vh;
   align-items: center;
@@ -39,11 +45,10 @@
   display: none;
   font-size: 3rem;
   * {
-    color: var(--darkGray-color);
+    color: var(--white-color);
   }
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: var(--padding-val);
 }
 #close:hover {
   * {
@@ -86,7 +91,7 @@
 
 /** NAVIGATION LINKS **/
 .nav-links {
-  min-height: 40vh;
+  min-height: 20vh;
   margin-bottom: 10px;
 }
 
@@ -113,13 +118,40 @@
 }
 
 /** SOCIAL ICONS **/
-.social-icons {
-  min-height: 10vh;
+.social-icons,
+.flag-icons {
+  min-height: 20vh;
+}
+.flag-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#cz,
+#uk {
+  max-width: 3rem;
+  width: 20%;
+  height: auto;
+  padding-bottom: 8px;
+}
+#cz:hover,
+#uk:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  border-bottom: dashed 2px var(--gray-color);
+  opacity: 1;
+}
+.flag-icons > img:not(.active) {
+  opacity: 0.3;
+}
+.flag-icons > img.active {
+  opacity: 1;
 }
 
 #github {
   padding: 2px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   * {
     color: var(--primary-color);
   }

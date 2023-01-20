@@ -1,14 +1,36 @@
+@import "../../App.scss";
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: var(--padding-val);
+  z-index: 3;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
 #menu {
   display: none;
 }
 
 @media (max-width: 1300px) {
-  #menu {
-    display: block;
-    text-align: right;
+  #menu,
+  #sound {
+    display: inline-block;
+    font-size: clamp(1rem, 7vw, 3rem);
+    padding: 6px;
+    border-radius: 10%;
+    background-color: rgba(0, 0, 0, 0.2);
   }
-
   #menu:hover {
     cursor: pointer;
   }
+
+  // div.header > div:first-child {
+  //   padding: 10px;
+  //   text-shadow: 10px black;
+  //   border-radius: 10%;
+  //   background-color: rgba(0, 0, 0, 0.2);
+  // }
 }

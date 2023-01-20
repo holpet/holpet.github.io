@@ -19,6 +19,11 @@
   }
 }
 
+:root {
+  //Design
+  --padding-val: clamp(20px, 3.5vw, 55px);
+}
+
 // Titles
 .gradient-base {
   background-size: 100%;
@@ -30,6 +35,7 @@
   text-transform: uppercase;
 }
 
+/* GRADIENT TEXTS */
 .gradient-text-primary {
   @extend .gradient-base;
   background-image: linear-gradient(
@@ -48,9 +54,19 @@
   );
 }
 
+@mixin gradText($deg-val, $clr1-val, $clr2-val) {
+  background-image: linear-gradient(
+    $deg-val,
+    var(--primary-color) $clr1-val,
+    var(--secondary-gradDark-color) $clr2-val
+  );
+}
+
 .squared-text {
   font-family: var(--font-square);
 }
+
+/* GRADIENT LINK */
 
 .gradient-link {
   display: table;
@@ -84,7 +100,9 @@
 }
 
 .gradient-link > span:nth-child(2) {
-  @extend .gradient-text-primary;
+  //@extend .gradient-text-primary;
+  color: var(--gray-color);
+  font-weight: lighter;
   @extend .gradient-link-text-base;
   opacity: 0;
   position: relative;
@@ -100,7 +118,10 @@
 }
 
 .gradient-link > span {
-  transition: opacity 350ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+.gradient-link:hover > span:nth-child(1) {
+  opacity: 0;
 }
 .gradient-link:hover > span:nth-child(2) {
   opacity: 1;

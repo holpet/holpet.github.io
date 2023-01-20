@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAtom } from "jotai";
 import { atomIsClosed as closed } from "../../lib/atoms/Atoms";
 import "./Navbar.scss";
 import { FaGithub as Github } from "react-icons/fa";
 import { AiFillCloseCircle as Close } from "react-icons/ai";
 import Logo from "./Logo/Logo";
+import { cz, uk } from "../../assets";
 
 const Navbar = () => {
   const [isClosed, setIsClosed] = useAtom(closed);
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <aside className={`navbar ${!isClosed && "show"}`}>
@@ -16,7 +18,6 @@ const Navbar = () => {
           id="close"
           onClick={() => {
             setIsClosed(true);
-            console.log("closed...");
           }}
         />
 
@@ -42,6 +43,20 @@ const Navbar = () => {
             <a href="#">Contact</a>
           </div>
         </nav>
+        <ul className="flag-icons">
+          <img
+            src={cz}
+            id="cz"
+            className={`${isActive && "active"}`}
+            onClick={() => setIsActive(!isActive)}
+          />
+          <img
+            src={uk}
+            id="uk"
+            className={`${!isActive && "active"}`}
+            onClick={() => setIsActive(!isActive)}
+          />
+        </ul>
         <ul className="social-icons">
           <a href="https://github.com/holpet">
             <Github id="github" />
