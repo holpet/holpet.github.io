@@ -135,6 +135,7 @@ div.home p.name {
 div.home p.name > span {
   @extend .gradient-base;
   display: inline-block;
+  vertical-align: sub;
   transform: rotate(0deg);
   border-bottom: 0px dashed var(--gray-color);
   transition: transform 250ms ease-in-out;

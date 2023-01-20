@@ -1,5 +1,9 @@
 // Grid layout
 .app-navbar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
   grid-area: navig;
   background-color: var(--black-color);
 }
