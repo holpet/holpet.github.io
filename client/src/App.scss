@@ -3,7 +3,6 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  box-sizing: border-box;
   grid-area: navig;
   background-color: var(--black-color);
 }
@@ -20,6 +19,11 @@
   .app-wrapper {
     grid-template-columns: 100%;
     grid-template-areas: "navig" "content";
+  }
+  .app-navbar {
+    position: relative;
+    height: auto;
+    top: auto;
   }
 }
 
