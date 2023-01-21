@@ -2,7 +2,7 @@
 
 div.home {
   @extend .basic-wrap;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   height: 100vh;
 }
 
@@ -23,11 +23,20 @@ div.home .wrapper {
 
 /* IMAGE -------------------------------------------------------- */
 
-div.home .wrapper > div:first-child {
+// bunny image wrapper
+div.home .img-wrapper {
   position: relative;
   left: 50vw;
-  top: max(-17vw, -10vw);
-  transform: rotate(-45deg);
+  top: max(-17vw, -8vw);
+  transform: rotate(-75deg);
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+@keyframes rotate {
+  to {
+    transform: rotate(-45deg);
+  }
 }
 
 .dashed-line {
@@ -37,6 +46,7 @@ div.home .wrapper > div:first-child {
   z-index: 2;
 }
 
+// dotted line #1
 div.home .wrapper > div:first-child > hr:nth-child(1) {
   @extend .dashed-line;
   width: clamp(0.3rem, 5vw, 5rem);
@@ -45,6 +55,7 @@ div.home .wrapper > div:first-child > hr:nth-child(1) {
   top: 20vw;
   @include fade-in("1100ms");
 }
+// dotted line #2
 div.home .wrapper > div:first-child > hr:nth-child(2) {
   @extend .dashed-line;
   width: clamp(4rem, 20vw, 20rem);
@@ -54,6 +65,7 @@ div.home .wrapper > div:first-child > hr:nth-child(2) {
   @include fade-in("1100ms");
 }
 
+// bunny image
 div.home .wrapper > div:first-child > img {
   content: url("./../../assets/bunnyTitle5.svg");
   width: clamp(10rem, 50vw, 55rem);

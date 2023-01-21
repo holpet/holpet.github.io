@@ -1,3 +1,7 @@
+@import "../../App.scss";
+
 div.skills {
+  @extend .basic-wrap;
   background-color: var(--lighterBlack-color);
+  overflow-x: hidden;
 }

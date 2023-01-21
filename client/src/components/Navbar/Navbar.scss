@@ -133,12 +133,14 @@
   width: 20%;
   height: auto;
   padding-bottom: 8px;
+  transform: scale(1);
+  transition: all 100ms ease-in-out;
 }
 #cz:hover,
 #uk:hover {
   cursor: pointer;
-  transform: scale(1.1);
-  border-bottom: dashed 2px var(--gray-color);
+  transform: scale(1.05);
+  //border-bottom: dashed 2px var(--gray-color);
   opacity: 1;
 }
 .flag-icons > img:not(.active) {
@@ -149,11 +151,13 @@
 }
 
 #github {
+  transform: scale(1);
   padding: 2px;
   font-size: 2.2rem;
   * {
     color: var(--primary-color);
   }
+  transition: all 100ms ease-in-out;
 }
 
 #github:hover {

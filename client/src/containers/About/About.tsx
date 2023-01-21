@@ -21,6 +21,7 @@ const About = () => {
           </div>
           {/* ITEM 2 */}
           <div className="grid-item">
+            <div></div>
             <div>
               <div>lines of code</div>
             </div>

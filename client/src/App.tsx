@@ -19,7 +19,7 @@ const App = () => {
       </div>
       <div className="app-content">
         <Header />
-        <main>
+        <main className="app-main">
           <Home />
           <About />
           <Skills />
