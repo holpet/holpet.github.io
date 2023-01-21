@@ -1,4 +1,4 @@
-// Grid layout
+// APP LAYOUT
 .app-navbar {
   position: sticky;
   top: 0;
@@ -8,6 +8,7 @@
 }
 .app-content {
   grid-area: content;
+  scrollbar-color: dark;
 }
 
 .app-wrapper {
@@ -25,6 +26,28 @@
     height: auto;
     top: auto;
   }
+}
+
+/* GFX -------------------------------------------------------- */
+
+// Basic page properties
+.basic-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: var(--padding-val);
+}
+.content-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.code {
+  font-family: var(--font-handWritten);
+  font-size: clamp(0.8rem, 3vw, 2rem);
+  color: var(--gray-color);
 }
 
 :root {
@@ -56,15 +79,16 @@
 .gradient-text-secondary {
   @extend .gradient-base;
   background-image: linear-gradient(
-    90deg,
-    var(--secondary-gradDark-color),
-    var(--secondary-gradLight-color)
+    120deg,
+    var(--secondary-gradDark-color) 35%,
+    var(--primary-color) 80%
   );
 }
 
 @mixin gradText($deg-val, $clr1-val, $clr2-val) {
   background-image: linear-gradient(
     $deg-val,
+    var(--primary-gradLight-color) 10%,
     var(--primary-color) $clr1-val,
     var(--secondary-gradDark-color) $clr2-val
   );
@@ -135,6 +159,18 @@
   opacity: 1;
 }
 .gradient-link:hover > div {
+  border: 0.3vw var(--gray-color) solid;
+  border-image-source: linear-gradient(
+    to left,
+    var(--primary-gradLight-color),
+    var(--primary-gradDark-color)
+  );
+  border-image-slice: 1;
+}
+
+/////// gradient touch ///////
+
+.gradient-border {
   border: 0.3vw var(--gray-color) solid;
   border-image-source: linear-gradient(
     to left,

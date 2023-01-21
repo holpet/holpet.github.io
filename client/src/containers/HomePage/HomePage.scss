@@ -1,20 +1,13 @@
 @import "../../App.scss";
 
 div.home {
+  @extend .basic-wrap;
+  overflow-x: hidden;
   height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding: var(--padding-val);
 }
 
-div.home div.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  user-select: none;
+div.home .wrapper {
+  @extend .content-wrap;
 }
 
 /* mixins */
@@ -22,15 +15,15 @@ div.home div.wrapper {
   animation: wait #{$waitTime}, bounce-in 800ms #{$waitTime};
 }
 @mixin slide-in($waitTime) {
-  animation: wait #{$waitTime}, slide-in 800ms #{$waitTime};
+  animation: wait #{$waitTime}, slide-in 1000ms #{$waitTime};
 }
 @mixin fade-in($waitTime) {
-  animation: wait #{$waitTime}, fade-in 1000ms #{$waitTime};
+  animation: wait #{$waitTime}, fade-in 800ms #{$waitTime};
 }
 
 /* IMAGE -------------------------------------------------------- */
 
-div.home div.wrapper > div:first-child {
+div.home .wrapper > div:first-child {
   position: relative;
   left: 50vw;
   top: max(-17vw, -10vw);
@@ -44,7 +37,7 @@ div.home div.wrapper > div:first-child {
   z-index: 2;
 }
 
-div.home div.wrapper > div:first-child > hr:nth-child(1) {
+div.home .wrapper > div:first-child > hr:nth-child(1) {
   @extend .dashed-line;
   width: clamp(0.3rem, 5vw, 5rem);
   transform: rotate(-15deg);
@@ -52,110 +45,108 @@ div.home div.wrapper > div:first-child > hr:nth-child(1) {
   top: 20vw;
   @include fade-in("1100ms");
 }
-div.home div.wrapper > div:first-child > hr:nth-child(2) {
+div.home .wrapper > div:first-child > hr:nth-child(2) {
   @extend .dashed-line;
   width: clamp(4rem, 20vw, 20rem);
   transform: rotate(-59deg);
   left: 2vw;
   top: 11vw;
-  @include fade-in("1400ms");
+  @include fade-in("1100ms");
 }
 
-div.home div.wrapper > div:first-child > img {
+div.home .wrapper > div:first-child > img {
   content: url("./../../assets/bunnyTitle5.svg");
   width: clamp(10rem, 50vw, 55rem);
   height: auto;
   position: absolute;
-  @include slide-in("1400ms");
+  @include slide-in("1200ms");
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 1) 35%,
-    rgba(0, 0, 0, 0) 80%
+    rgba(0, 0, 0, 0.7) 80%
   );
 }
 
 @media (min-width: 1601px) {
-  div.home div.wrapper > div:first-child > img {
+  div.home .wrapper > div:first-child > img {
     content: url("./../../assets/bunnyTitle6.svg");
   }
-  div.home div.wrapper > div:first-child > hr:nth-child(1),
-  div.home div.wrapper > div:first-child > hr:nth-child(2) {
+  div.home .wrapper > div:first-child > hr:nth-child(1),
+  div.home .wrapper > div:first-child > hr:nth-child(2) {
     display: none;
   }
 }
 
 @media (min-width: 1301px) {
-  div.home div.wrapper > div:first-child {
+  div.home .wrapper > div:first-child {
     left: 40vw;
   }
 }
 
 @media (max-width: 300px) {
-  div.home div.wrapper > div:first-child > img {
+  div.home .wrapper > div:first-child > img {
     content: url("./../../assets/bunnyTitle6.svg");
   }
-  div.home div.wrapper > div:first-child > hr:nth-child(1),
-  div.home div.wrapper > div:first-child > hr:nth-child(2) {
+  div.home .wrapper > div:first-child > hr:nth-child(1),
+  div.home .wrapper > div:first-child > hr:nth-child(2) {
     display: none;
   }
 }
 
 /* TEXT --------------------------------------------------------------------- */
 
-div.home div.text-wrapper {
+div.home .text-wrapper {
   position: relative;
   white-space: nowrap;
   text-transform: capitalize;
 }
 
-div.home p.code {
-  font-family: var(--font-handWritten);
-  font-size: clamp(0.8rem, 3vw, 2rem);
-  color: var(--gray-color);
+div.home .code {
+  @extend .code;
 }
 
-div.home p.greeting,
-div.home p.profession {
+div.home .greeting,
+div.home .profession {
   font-size: clamp(1.2rem, 8vw, 5rem);
   font-weight: bolder;
 }
-div.home p.greeting {
+div.home .greeting {
   @include bounce-in("0ms");
 }
-div.home p.profession {
+div.home .profession {
   @include bounce-in("600ms");
 }
 
-div.home p.name {
+div.home .name {
   font-size: clamp(1.2rem, 8vw, 4.8rem);
   font-weight: bolder;
   @include bounce-in("300ms");
 }
 
-div.home p.name > span {
+div.home .name > span {
   @extend .gradient-base;
   display: inline-block;
-  vertical-align: sub;
+  //vertical-align: sub;
   transform: rotate(0deg);
   border-bottom: 0px dashed var(--gray-color);
   transition: transform 250ms ease-in-out;
 }
-div.home p.name > span:nth-child(even) {
-  @include gradText(170deg, 30%, 60%);
+div.home .name > span:nth-child(even) {
+  @include gradText(120deg, 30%, 60%);
 }
-div.home p.name > span:nth-child(odd) {
+div.home .name > span:nth-child(odd) {
   @include gradText(190deg, 48%, 50%);
 }
-div.home p.name > span:nth-child(even):hover {
+div.home .name > span:nth-child(even):hover {
   transform: rotate(7deg);
   border-bottom: 2px dashed var(--gray-color);
 }
-div.home p.name > span:nth-child(odd):hover {
+div.home .name > span:nth-child(odd):hover {
   transform: rotate(-7deg);
   border-bottom: 2px dashed var(--gray-color);
 }
 
-div.home p.role {
+div.home .role {
   font-size: clamp(0.7rem, 2.8vw, 1.7rem);
   color: var(--gray-color);
   @include bounce-in("900ms");
@@ -193,7 +184,7 @@ div.home p.role {
   0% {
     opacity: 0;
     filter: blur(50%);
-    transform: translateX(50%);
+    transform: translateX(40%);
   }
   50% {
     opacity: 0.3;

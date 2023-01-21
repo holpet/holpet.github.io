@@ -6,7 +6,8 @@ div {
   overflow-x: visible;
   position: relative;
 }
-div.logo:hover > img {
+div.logo:hover > .logo1,
+div.logo:hover > .logo2 {
   transform: rotate(-10deg);
 }
 
@@ -16,6 +17,17 @@ div > img {
   opacity: 1;
   transition: all 500ms ease-in-out;
 }
-.logo1 {
+.logo2 {
+  position: relative;
+}
+
+.logo1,
+.logo1_bg,
+.logo2_bg {
   position: absolute;
+}
+
+.logo1_bg,
+.logo2_bg {
+  left: 0;
 }

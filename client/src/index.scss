@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @font-face {
@@ -12,6 +12,10 @@
   font-family: JennaSue;
   src: url(/fonts/JennaSue.ttf);
 }
+@font-face {
+  font-family: Cabin;
+  src: url(/fonts/Cabin-VariableFont.ttf);
+}
 
 :root {
   --font-title: "La Belle", sans-serif;
@@ -21,14 +25,14 @@
   --font-square: "NoCurvesBoustrophedon";
   --font-handWritten: "JennaSue";
 
-  // primary
-  --primary-color: #91c4f2;
+  // basic ---- primary // #91c4f2
+  --primary-color: #17acda;
   --secondary-color: #b457b3;
 
   // gradient
-  --primary-gradDark-color: #546baa;
-  --primary-gradLight-color: #b8dbfa;
-  --secondary-gradDark-color: #a14da0;
+  --primary-gradDark-color: #117d9e;
+  --primary-gradLight-color: #8ad9f8;
+  --secondary-gradDark-color: #b457b3;
   --secondary-gradLight-color: #bf96e3;
 
   // misc
@@ -47,13 +51,15 @@
   margin: 0;
   scroll-behavior: smooth;
   color: var(--white-color);
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 body {
   background-color: var(--lighterBlack-color);
   font-family: var(--font-secondary);
-  user-select: none;
   width: 100vw;
   height: 100vh;
+  user-select: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }

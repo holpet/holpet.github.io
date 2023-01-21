@@ -1,28 +1,11 @@
 import React from "react";
 import "./HomePage.scss";
 import { AiOutlineArrowDown as Arrow } from "react-icons/ai";
+import PrimaryLink from "../../components/Links/PrimaryLink";
 
 const HomePage = () => {
   const name = "Petra";
   const nameArray = name.split("");
-
-  // function reveal() {
-  //   var reveals = document.querySelectorAll(".reveal");
-
-  //   for (var i = 0; i < reveals.length; i++) {
-  //     var windowHeight = window.innerHeight;
-  //     var elementTop = reveals[i].getBoundingClientRect().top;
-  //     var elementVisible = 150;
-
-  //     if (elementTop < windowHeight - elementVisible) {
-  //       reveals[i].classList.add("active");
-  //     } else {
-  //       reveals[i].classList.remove("active");
-  //     }
-  //   }
-  // }
-
-  // window.addEventListener("scroll", reveal);
 
   return (
     <>
@@ -52,11 +35,7 @@ const HomePage = () => {
               </p>
               <p className="profession">Web developer.</p>
               <p className="role">Full Stack || Coding and learning</p>
-              <a href="/" className="gradient-link">
-                <span>contact</span>
-                <span>contact</span>
-                <div></div>
-              </a>
+              <PrimaryLink text="contact" />
               <p className="code">&lt;/Home&gt;</p>
             </div>
           </div>

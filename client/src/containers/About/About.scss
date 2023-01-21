@@ -1,4 +1,230 @@
+@import "../../App.scss";
+
 div.about {
-  height: 100vh;
+  @extend .basic-wrap;
   background-color: var(--lighterBlack-color);
+}
+
+div.about .wrapper {
+  display: flexbox;
+  align-items: center;
+  width: 100%;
+}
+
+/* TEXT -------------------------------------------------------- */
+
+div.about .code {
+  @extend .code;
+}
+
+div.about .title {
+  font-size: clamp(1rem, 6vw, 4rem);
+  font-weight: bolder;
+}
+
+div.about .grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: 1fr;
+  column-count: 2;
+  gap: 2vw 2vw;
+  padding-bottom: 15px;
+  margin: 2vw 0;
+}
+
+div.about .grid-item {
+  border: 5px solid var(--primary-color);
+  font-size: clamp(0.6rem, 1.3vw, 1.1rem);
+  text-align: justify;
+}
+
+@media (max-width: 800px) {
+  div.about .grid {
+    grid-template-columns: auto;
+    column-count: 1;
+    padding-bottom: 0px;
+  }
+  div.about .grid-item {
+    grid-template-columns: auto;
+    column-count: 1;
+  }
+  div.about .grid-item:nth-child(2),
+  div.about .grid-item:nth-child(3),
+  div.about .grid-item:nth-child(6) {
+    display: none !important;
+  }
+  div.about .grid-item:nth-child(1) {
+    border-bottom: 5px solid var(--primary-color) !important;
+    padding-bottom: 12px;
+  }
+  div.about .grid-item:nth-child(4) {
+    border-bottom: 5px solid var(--secondary-color) !important;
+    padding-bottom: 12px;
+  }
+  div.about .grid-item:nth-child(5) {
+    //border-bottom: 5px solid var(--primary-gradDark-color) !important;
+    padding-bottom: 0px;
+  }
+  div.about .box1 {
+    border-width: 0 2px 0 2px !important;
+    margin: 0 0 0 10px;
+  }
+  div.about .box2 {
+    border-width: 2px 0 2px 0 !important;
+    margin: 0 10px 0 0;
+  }
+  div.about .box3 {
+    border-width: 2px 0 0 2px !important;
+    margin: 0 0 0 10px;
+  }
+  div.about .box1,
+  div.about .box2,
+  div.about .box3 {
+    display: block !important;
+    width: 50% !important;
+    border: var(--gray-color) dashed;
+  }
+  div.about .grid-item:nth-child(1),
+  div.about .grid-item:nth-child(4),
+  div.about .grid-item:nth-child(5) {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 420px) {
+  div.about .box1,
+  div.about .box2,
+  div.about .box3 {
+    display: none !important;
+  }
+}
+
+div.about .grid-item .box {
+  display: none;
+}
+
+// TEXT -------------------------------------------- //
+div.about .grid-item:nth-child(1),
+div.about .grid-item:nth-child(4),
+div.about .grid-item:nth-child(5) {
+  border: none;
+}
+
+// GFX with text ----------------------------------- //
+div.about .grid-item:nth-child(2),
+div.about .grid-item:nth-child(3),
+div.about .grid-item:nth-child(6) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// animate text inside borders
+@mixin swing($waitTime1, $waitTime2) {
+  animation: waiting #{$waitTime1}, swing 6s #{$waitTime2} ease infinite;
+}
+
+div.about .grid-item:nth-child(2) > div > div {
+  @include swing("1s", "1s");
+}
+div.about .grid-item:nth-child(3) > div > div {
+  @include swing("1s", "3s");
+}
+div.about .grid-item:nth-child(6) > div > div {
+  @include swing("1s", "5s");
+}
+
+@keyframes waiting {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.primary-span {
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+.secondary-span {
+  color: var(--secondary-color);
+  font-weight: bolder;
+}
+
+// GFX BORDER ----------------------------------------- //
+
+div.about .grid-item:nth-child(3) {
+  position: relative;
+  border-top: 5px solid var(--secondary-color);
+  border-bottom: 2px var(--gray-color) dashed;
+  border-left: 5px solid var(--secondary-color);
+  border-right: 2px var(--gray-color) dashed;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0.7) 80%
+  );
+}
+div.about .grid-item:nth-child(3) > div:nth-child(1) {
+  position: absolute;
+  border-bottom: 5px solid var(--secondary-color);
+  width: 70%;
+  padding: 2px;
+  bottom: -2px;
+}
+
+div.about .grid-item:nth-child(2) {
+  border-top: 5px solid var(--primary-color);
+  border-bottom: 5px solid var(--primary-color);
+  border-left: 2px var(--gray-color) dashed;
+  border-right: 2px var(--gray-color) dashed;
+  mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(0, 0, 0, 0.8) 80%
+  );
+}
+div.about .grid-item:nth-child(6) {
+  position: relative;
+  border-top: 2px var(--gray-color) dashed;
+  border-bottom: 2px var(--gray-color) dashed;
+  border-left: 5px solid var(--primary-color);
+  border-right: 5px solid var(--primary-color);
+  mask-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 0.8) 90%
+  );
+}
+div.about .grid-item:nth-child(6) > div:nth-child(1) {
+  position: absolute;
+  border-top: 5px solid var(--primary-color);
+  width: 10%;
+  padding: 2px;
+  top: -2px;
+  right: 0;
 }
