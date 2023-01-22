@@ -7,3 +7,4 @@ export { default as logo2_bird } from "./origami2_bird.svg";
 export { default as bunny } from "./bunnyTitle5.svg";
 export { default as cz } from "./czflag.svg";
 export { default as uk } from "./ukflag.svg";
+export { default as boat } from "./boat2.svg";

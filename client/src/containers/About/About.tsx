@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { about } from "../../texts";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "./About.scss";
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <div className="about">
       <div className="wrapper">
         <p className="code">&lt;About&gt;</p>
-        <p className="title">My Story...</p>
+        <p className="title" data-aos="fade-down" data-aos-duration="600">
+          <span>私</span> My Story...
+        </p>
+
+        {/* About start */}
+
         <div className="grid">
           {/* ITEM 1 */}
-          <div className="grid-item">
+          <div className="grid-item" data-aos="fade-right">
             <div>
               {about.en["1-a"]}
               <span className="primary-span">{about.en["1-phrase"]}</span>
@@ -23,18 +34,18 @@ const About = () => {
           <div className="grid-item">
             <div></div>
             <div>
-              <div>lines of code</div>
+              <div data-aos="zoom-in">lines of code</div>
             </div>
           </div>
           {/* ITEM 3 */}
           <div className="grid-item">
             <div></div>
             <div>
-              <div>graphics with purpose</div>
+              <div data-aos="zoom-in">graphics with purpose</div>
             </div>
           </div>
           {/* ITEM 4 */}
-          <div className="grid-item">
+          <div className="grid-item" data-aos="fade-left">
             <div className="box2"></div>
             <div>
               {about.en["2-a"]}
@@ -43,7 +54,7 @@ const About = () => {
             </div>
           </div>
           {/* ITEM 5 */}
-          <div className="grid-item">
+          <div className="grid-item" data-aos="fade-right">
             <div>
               {about.en["3-a"]}
               <span className="primary-span">{about.en["3-phrase"]}</span>
@@ -55,10 +66,13 @@ const About = () => {
           <div className="grid-item">
             <div></div>
             <div>
-              <div>mid-/junior position</div>
+              <div data-aos="zoom-in">mid-/junior position</div>
             </div>
           </div>
         </div>
+
+        {/* About end */}
+
         <p className="code">&lt;/About&gt;</p>
       </div>
     </div>

@@ -1,0 +1,32 @@
+@import "../../App.scss";
+
+div:nth-child(1) {
+  @extend .basic-wrap;
+  background-color: var(--lighterBlack-color);
+  padding: var(--padding-val);
+}
+
+div:nth-child(1) .wrapper {
+  display: flexbox;
+  align-items: center;
+  width: 100%;
+}
+
+div:nth-child(1) .code {
+  @extend .code;
+}
+
+div:nth-child(1) .title {
+  font-size: clamp(1rem, 6vw, 4rem);
+  font-weight: bolder;
+}
+div:nth-child(1) .title > span {
+  @extend .gradient-base;
+  @include gradText(120deg, 30%, 60%);
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 250ms ease-in-out;
+}
+div:nth-child(1) .title > span:hover {
+  transform: rotate(7deg);
+}

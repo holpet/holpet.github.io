@@ -2,8 +2,9 @@
 
 div.home {
   @extend .basic-wrap;
-  //overflow-x: hidden;
+  overflow-x: hidden;
   height: 100vh;
+  padding: var(--padding-val);
 }
 
 div.home .wrapper {
@@ -105,6 +106,12 @@ div.home .wrapper > div:first-child > img {
   }
 }
 
+@media (max-height: 500px) {
+  div.home {
+    height: 100%;
+  }
+}
+
 /* TEXT --------------------------------------------------------------------- */
 
 div.home .text-wrapper {
@@ -171,6 +178,7 @@ div.home .role {
   left: 50%;
   top: 90vh;
   animation: animate-up-down 1s ease-in-out infinite;
+  z-index: 4;
 }
 
 @keyframes animate-up-down {
@@ -196,7 +204,7 @@ div.home .role {
   0% {
     opacity: 0;
     filter: blur(50%);
-    transform: translateX(40%);
+    transform: translateY(40%);
   }
   50% {
     opacity: 0.3;
@@ -204,7 +212,7 @@ div.home .role {
   100% {
     opacity: 1;
     filter: blur(0%);
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 @keyframes fade-in {

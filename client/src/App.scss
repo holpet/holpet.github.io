@@ -9,6 +9,7 @@
 .app-content {
   grid-area: content;
   scrollbar-color: dark;
+  overflow-x: hidden;
 }
 
 .app-wrapper {
@@ -30,14 +31,15 @@
 
 /* GFX -------------------------------------------------------- */
 
+// BASIC ---------------> ///////
+
 // Basic page properties
 .basic-wrap {
-  //height: 100vh;
   width: 100%;
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: var(--padding-val);
+  //padding: var(--padding-val);
 }
 .content-wrap {
   display: flex;
@@ -55,6 +57,8 @@
   //Design
   --padding-val: clamp(20px, 3.5vw, 55px);
 }
+
+// TITLING ---------------> ///////
 
 // Titles
 .gradient-base {
