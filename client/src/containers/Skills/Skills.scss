@@ -58,11 +58,14 @@ div.skills .grid > div:nth-child(2) {
 div.skills .grid > div:nth-child(1) > div,
 div.skills .grid > div:nth-child(3) > div {
   width: 100%;
-  margin: clamp(30px, 5vw, 60px);
+  margin: clamp(10px, 5vw, 60px);
 }
 
 @media (max-width: 800px) {
   div.skills .grid {
-    flex-direction: column !important;
+    margin: 2vw 0;
+    display: grid;
+    grid-template-columns: 1fr 40vw 1fr;
+    column-gap: 0px;
   }
 }

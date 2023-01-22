@@ -1,7 +1,4 @@
 .scene {
-  //position: absolute;
-  //width: 200px;
-  //height: 260px;
   perspective: 600px;
 }
 
@@ -12,16 +9,15 @@
   transition: transform 1s;
   transform-style: preserve-3d;
 }
+.card:hover {
+  cursor: pointer;
+}
 
 .card__face {
   position: absolute;
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
-}
-
-.card__face--front {
-  //
 }
 
 .blue-card {
@@ -41,6 +37,17 @@
   );
 }
 
+.card__face--front,
+.card__face--back {
+  font-size: clamp(0.6rem, 1.3vw, 1.1rem);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__face--front {
+  text-transform: uppercase;
+}
 .card__face--back {
   background: var(--gray-color);
   transform: rotateY(180deg);

@@ -16,7 +16,7 @@ const TagSphere = () => {
     c.translate(cx, cy);
     c.globalAlpha = 1;
     var can = canvasRef.current;
-    var ctx = can!.getContext("2d");
+    var ctx = can?.getContext("2d");
     var img = boatRef.current;
     //@ts-ignore
     ctx.drawImage(img, -70, -85, img.width * 1, img.height * 1);

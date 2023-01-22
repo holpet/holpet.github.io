@@ -31,7 +31,7 @@ const FlipCard = ({ text, card }: props) => {
             card === "left" ? "blue-card" : "purple-card"
           }`}
         >
-          front
+          {card === "left" ? "front end" : "back end"}
         </div>
         <div className={`card__face card__face--back`}>back</div>
       </div>
