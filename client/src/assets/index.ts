@@ -8,3 +8,8 @@ export { default as bunny } from "./bunnyTitle5.svg";
 export { default as cz } from "./czflag.svg";
 export { default as uk } from "./ukflag.svg";
 export { default as boat } from "./boat2.svg";
+export { default as boat_blue } from "./boat-blue.svg";
+export { default as boat_purple } from "./boat-purple.svg";
+export { default as spinner } from "./blockspinner2.svg";
+export { default as butterfly } from "./butterfly2.svg";
+export { default as paperplane } from "./paperplane.svg";

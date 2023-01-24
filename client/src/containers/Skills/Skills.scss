@@ -36,8 +36,38 @@ div.skills .title > span:hover {
 div.skills .grid {
   margin: 2vw 0;
   display: grid;
-  grid-template-columns: 1fr 40vw 1fr;
+  grid-template-columns: 1fr 35vw 1fr;
+  grid-template-areas: "card1 tagcanvas card2";
+  column-count: 3;
   column-gap: 0px;
+}
+
+@media (max-width: 1600px) {
+  div.skills .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "tagcanvas tagcanvas" "card1 card2";
+    column-count: 2;
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+}
+@media (max-width: 550px) {
+  div.skills .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "tagcanvas" "card1" "card2";
+    column-count: 1;
+    row-gap: 20px;
+  }
+}
+
+div.skills .grid > div:nth-child(1) {
+  grid-area: card1;
+}
+div.skills .grid > div:nth-child(2) {
+  grid-area: tagcanvas;
+}
+div.skills .grid > div:nth-child(3) {
+  grid-area: card2;
 }
 
 div.skills .grid > div:nth-child(1),
@@ -47,25 +77,18 @@ div.skills .grid > div:nth-child(3) {
   width: 100%;
   height: 100%;
   border: 2px dashed var(--gray-color);
+  min-height: max-content;
 }
 
 div.skills .grid > div:nth-child(2) {
   display: inline-flex;
   height: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 div.skills .grid > div:nth-child(1) > div,
 div.skills .grid > div:nth-child(3) > div {
   width: 100%;
-  margin: clamp(10px, 5vw, 60px);
-}
-
-@media (max-width: 800px) {
-  div.skills .grid {
-    margin: 2vw 0;
-    display: grid;
-    grid-template-columns: 1fr 40vw 1fr;
-    column-gap: 0px;
-  }
+  margin: clamp(10px, 5vw, 40px);
 }

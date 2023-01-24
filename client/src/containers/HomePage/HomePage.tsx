@@ -42,7 +42,7 @@ const HomePage = () => {
               <p className="profession">Web developer.</p>
               <p className="role">Full Stack || Code and learn</p>
               <PrimaryLink text="contact" />
-              <p className="code">&lt;/Home&gt;</p>
+              <p className="code end">&lt;/Home&gt;</p>
             </div>
           </div>
         </div>

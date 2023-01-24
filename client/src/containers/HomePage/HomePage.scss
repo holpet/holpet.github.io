@@ -40,35 +40,9 @@ div.home .img-wrapper {
   }
 }
 
-.dashed-line {
-  position: absolute;
-  border: none;
-  border-top: 3px var(--gray-color) dashed;
-  z-index: 2;
-}
-
-// dotted line #1
-div.home .wrapper > div:first-child > hr:nth-child(1) {
-  @extend .dashed-line;
-  width: clamp(0.3rem, 5vw, 5rem);
-  transform: rotate(-15deg);
-  left: 2vw;
-  top: 20vw;
-  @include fade-in("1100ms");
-}
-// dotted line #2
-div.home .wrapper > div:first-child > hr:nth-child(2) {
-  @extend .dashed-line;
-  width: clamp(4rem, 20vw, 20rem);
-  transform: rotate(-59deg);
-  left: 2vw;
-  top: 11vw;
-  @include fade-in("1100ms");
-}
-
 // bunny image
 div.home .wrapper > div:first-child > img {
-  content: url("./../../assets/bunnyTitle5.svg");
+  content: url("./../../assets/bunnyTitle6.svg");
   width: clamp(10rem, 50vw, 55rem);
   height: auto;
   position: absolute;
@@ -80,29 +54,9 @@ div.home .wrapper > div:first-child > img {
   );
 }
 
-@media (min-width: 1601px) {
-  div.home .wrapper > div:first-child > img {
-    content: url("./../../assets/bunnyTitle6.svg");
-  }
-  div.home .wrapper > div:first-child > hr:nth-child(1),
-  div.home .wrapper > div:first-child > hr:nth-child(2) {
-    display: none;
-  }
-}
-
 @media (min-width: 1301px) {
   div.home .wrapper > div:first-child {
     left: 40vw;
-  }
-}
-
-@media (max-width: 300px) {
-  div.home .wrapper > div:first-child > img {
-    content: url("./../../assets/bunnyTitle6.svg");
-  }
-  div.home .wrapper > div:first-child > hr:nth-child(1),
-  div.home .wrapper > div:first-child > hr:nth-child(2) {
-    display: none;
   }
 }
 
@@ -123,6 +77,9 @@ div.home .text-wrapper {
 div.home .code {
   @extend .code;
 }
+div.home .code.end {
+  margin: clamp(5px, 2vw, 15px) 0;
+}
 
 div.home .greeting,
 div.home .profession {
@@ -130,16 +87,16 @@ div.home .profession {
   font-weight: bolder;
 }
 div.home .greeting {
-  @include bounce-in("0ms");
+  @include bounce-in("400ms");
 }
 div.home .profession {
-  @include bounce-in("600ms");
+  @include bounce-in("1000ms");
 }
 
 div.home .name {
   font-size: clamp(1.2rem, 8vw, 4.8rem);
   font-weight: bolder;
-  @include bounce-in("300ms");
+  @include bounce-in("700ms");
 }
 
 div.home .name > span {

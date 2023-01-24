@@ -15,7 +15,7 @@ const About = () => {
       <div className="wrapper">
         <p className="code">&lt;About&gt;</p>
         <p className="title" data-aos="fade-down" data-aos-duration="600">
-          <span>私</span> My Story...
+          <span>私</span> Who am I...
         </p>
 
         {/* About start */}
@@ -73,7 +73,7 @@ const About = () => {
 
         {/* About end */}
 
-        <p className="code">&lt;/About&gt;</p>
+        <p className="code end">&lt;/About&gt;</p>
       </div>
     </div>
   );

@@ -12,6 +12,18 @@
       body {
         background-color: #1d1d1d;
         color: white;
+        overflow-x: hidden;
+      }
+      #loader-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        transform: translate(-50%, -50%);
+      }
+      .hide-loader {
+        display: none;
       }
     </style>
     <title>HolPet Portfolio</title>
@@ -54,7 +66,11 @@
         filter="url(#goo)"
       ></path>
     </svg>
-    <div id="root"></div>
+    <div id="root">
+      <div id="loader-container">
+        <img src="./src/assets/blockspinner2.svg" width="80px" height="80px" />
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
