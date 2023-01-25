@@ -81,21 +81,18 @@ const FlipCard = ({ text, card }: props) => {
             <div className="card-text-container">
               <div>
                 <p>
-                  <span className="first-letter">A</span>s you can see on this
-                  page, I quite enjoy playing with css and making a site look
-                  "precise" and unique, including full responsiveness. I learned
-                  a lot just by creating this page alone.
+                  <span className="first-letter">A</span>s I've grown and
+                  realized I wanted to create more complex, impactful projects,
+                  I've been broadening my knowledge and experience in various
+                  technologies, with most focus on the popular and widely used
+                  <b className="skill-para"> MERN</b> stack (MongoDB, Express,
+                  React, Node).
                 </p>
                 <p>
-                  But of course, the front of the website is not all and I'm
-                  happy to say I don't shy away from backend work that includes
-                  handling user input, database and server management.
-                </p>
-                <p>
-                  I've been focusing my learning around the{" "}
-                  <b className="skill-para">MERN</b> stack, since I've always
-                  wanted to create more complex projects with great technology -
-                  fast, responsive and with a large community behind it.
+                  Since the IT industry progresses so fast and there are so many
+                  technologies to utilize now, I think I've gained a solid basis
+                  of understanding both the front and the back end, which can be
+                  drawn upon for custom solutions.
                 </p>
                 <br />
               </div>

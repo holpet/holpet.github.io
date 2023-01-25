@@ -30,20 +30,12 @@ div.home .img-wrapper {
   left: 50vw;
   top: max(-17vw, -8vw);
   transform: rotate(-75deg);
-  animation: rotate 1s linear infinite;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -1s);
-}
-@keyframes rotate {
-  to {
-    transform: rotate(-45deg);
-  }
 }
 
 // bunny image
 div.home .wrapper > div:first-child > img {
   content: url("./../../assets/bunnyTitle6.svg");
-  width: clamp(10rem, 50vw, 55rem);
+  width: clamp(10rem, 48vw, 48vw);
   height: auto;
   position: absolute;
   @include slide-in("1200ms");

@@ -36,6 +36,7 @@ const TagSphere = () => {
     TagCanvas.noSelect = true;
     TagCanvas.weight = true;
     TagCanvas.shuffleTags = true;
+    TagCanvas.shadow = "transparent";
     try {
       TagCanvas.Start("canvas", "tags", { centreFunc: RSquare });
     } catch (e) {
