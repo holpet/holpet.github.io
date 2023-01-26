@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./FlipCard.scss";
 import { boat_blue, boat_purple } from "../../../assets";
+import { BsHandIndex as Hand } from "react-icons/bs";
 
 interface props {
   text: string;
@@ -26,7 +27,8 @@ const FlipCard = ({ text, card }: props) => {
             card === "left" ? "blue-card" : "purple-card"
           }`}
         >
-          {text}
+          <span>{text}</span>
+          <Hand className={`hand ${card === "left" ? "del1" : "del2"}`} />
         </div>
         <div className={`card__face card__face--back`}>
           {card === "left" ? (
