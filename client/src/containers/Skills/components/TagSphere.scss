@@ -1,18 +1,17 @@
 .blue-weighted {
   color: var(--primary-color);
-  //font-size: clamp(2rem, 3vw, 3rem);
   font-size: 3rem;
 }
 
 .purple-weighted {
   color: var(--secondary-color);
-  //font-size: clamp(1.2rem, 2vw, 2rem);
   font-size: 2rem;
 }
 
+$tagcanvas-width: 35vw;
+
 .tagcanvas {
-  min-width: 35vw;
-  // max-width: 200%;
+  min-width: $tagcanvas-width;
 }
 
 #canvasContainer {

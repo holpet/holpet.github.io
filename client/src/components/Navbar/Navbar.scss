@@ -1,4 +1,4 @@
-@import "../../App.scss";
+@import "../../themes/MainTheme.scss";
 
 .navbar {
   width: 100%;
@@ -69,6 +69,7 @@
 
 .logo-section,
 .logo-section > a {
+  color: var(--white-color);
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -96,10 +97,10 @@
 }
 
 .nav-links div {
-  border-top: 2px var(--gray-color) dashed;
+  border-top: var(--basic-border);
 }
 .nav-links div:last-child {
-  border-bottom: 2px var(--gray-color) dashed;
+  border-bottom: var(--basic-border);
 }
 
 .nav-links a {
@@ -141,7 +142,6 @@
 #uk:hover {
   cursor: pointer;
   transform: scale(1.05);
-  //border-bottom: dashed 2px var(--gray-color);
   opacity: 1;
 }
 .flag-icons > img:not(.active) {

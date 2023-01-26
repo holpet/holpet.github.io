@@ -1,22 +1,13 @@
 import React from "react";
 import "./Contact.scss";
+import { paperplane } from "../../assets";
+import SectionWrapper from "../../components/Wrappers/SectionWrapper";
 
 const Contact = () => {
   return (
-    <div className="contact">
-      <div className="wrapper">
-        <p className="code">&lt;Contact&gt;</p>
-        <p className="title" data-aos="fade-down" data-aos-duration="600">
-          <span>会</span> What I've done...
-        </p>
-
-        {/* Work start */}
-
-        {/* Work end */}
-
-        <p className="code end">&lt;/Contact&gt;</p>
-      </div>
-    </div>
+    <SectionWrapper section="contact" char="会" title="How to reach me...">
+      <div>Heloooo</div>
+    </SectionWrapper>
   );
 };
 

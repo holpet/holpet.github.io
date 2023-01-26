@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useState } from "react";
 import "./FlipCard.scss";
-import { boat_blue, boat_purple } from "../../assets";
+import { boat_blue, boat_purple } from "../../../assets";
 
 interface props {
   text: string;
@@ -11,10 +9,6 @@ interface props {
 
 const FlipCard = ({ text, card }: props) => {
   const [isFlipped, setIsFlipped] = useState(false);
-
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
 
   return (
     <div
@@ -39,27 +33,14 @@ const FlipCard = ({ text, card }: props) => {
             <div className="card-text-container">
               <img src={boat_blue} />
               <div>
-                <span>HTML, CSS, JavaScript - TS</span>
+                <span className="skill-percent">
+                  % <b className="skill-para">used in projects:</b>
+                </span>
+                <br />
+                <span>JavaScript, TypeScript</span>
                 <div
                   className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
-                  id="skill-html"
-                ></div>
-                <div className="skill-line skill-underline"></div>
-              </div>
-              <div>
-                <span>React* / Next</span>
-                <div
-                  className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
-                  id="skill-react"
-                ></div>
-                <div className="skill-line skill-underline"></div>
-              </div>
-              <br />
-              <div>
-                <span>Node, Express, MongoDB</span>
-                <div
-                  className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
-                  id="skill-node"
+                  id="skill-js"
                 ></div>
                 <div className="skill-line skill-underline"></div>
               </div>
@@ -72,8 +53,26 @@ const FlipCard = ({ text, card }: props) => {
                 <div className="skill-line skill-underline"></div>
               </div>
               <br />
+              <div>
+                <span>React / Next</span>
+                <div
+                  className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
+                  id="skill-react"
+                ></div>
+                <div className="skill-line skill-underline"></div>
+              </div>
+              <div>
+                <span>Node, MongoDB</span>
+                <div
+                  className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
+                  id="skill-node"
+                ></div>
+                <div className="skill-line skill-underline"></div>
+              </div>
+
+              <br />
               <p className="skill-para">
-                *This portfolio website was created with React.
+                / This portfolio website was created with React. /
               </p>
               <hr />
             </div>

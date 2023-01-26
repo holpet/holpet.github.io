@@ -1,17 +1,10 @@
-import React, { useEffect } from "react";
 import "./HomePage.scss";
 import { AiOutlineArrowDown as Arrow } from "react-icons/ai";
 import PrimaryLink from "../../components/Links/PrimaryLink";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const HomePage = () => {
   const name = "Petra";
   const nameArray = name.split("");
-
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
 
   return (
     <>

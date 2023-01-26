@@ -1,57 +1,21 @@
-@import "../../App.scss";
-
-div.work {
-  @extend .basic-wrap;
-  background-color: var(--lighterBlack-color);
-  padding: var(--padding-val);
-}
-
-div.work .wrapper {
-  display: flexbox;
-  align-items: center;
-  width: 100%;
-}
-
-div.work .code {
-  @extend .code;
-}
-div.work .code.end {
-  margin: clamp(10px, 4vw, 40px) 0;
-}
-
-div.work .title {
-  font-size: clamp(1rem, 6vw, 4rem);
-  font-weight: bolder;
-}
-div.work .title > span {
-  @extend .gradient-base;
-  @include gradText(120deg, 30%, 60%);
-  display: inline-block;
-  transform: rotate(0deg);
-  transition: transform 250ms ease-in-out;
-}
-div.work .title > span:hover {
-  transform: rotate(7deg);
-}
-
 // CONTENT ********************************************** //
 
-div.work .work-icon-container {
+.work .work-icon-container {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-div.work .work-icon {
+.work .work-icon {
   width: 25vw;
   position: relative;
   z-index: 5;
   animation: back-and-forth 5s infinite ease-in-out;
 }
 
-div.work .work-line {
+.work .work-line {
   width: 4px;
-  border-left: dashed 2px var(--gray-color);
+  border-left: var(--basic-border);
   //height: set dynamically by listening to window resize event
   position: absolute;
   left: calc(50% - 2px);
@@ -61,7 +25,7 @@ div.work .work-line {
 
 // CONTAINER ********************************************** //
 
-div.work .grid {
+.work .grid {
   display: grid;
   grid-column: 2;
   grid-template-columns: 1fr 1fr;
@@ -71,7 +35,7 @@ div.work .grid {
   position: relative;
 }
 
-div.work .grid-item {
+.work .grid-item {
   width: 100%;
   min-height: 10rem;
   display: flex;
@@ -82,7 +46,7 @@ div.work .grid-item {
 }
 
 @media (max-width: 600px) {
-  div.work .grid {
+  .work .grid {
     grid-column: 1;
     grid-template-columns: 1fr;
     //grid-auto-rows: 1fr;
@@ -91,39 +55,40 @@ div.work .grid-item {
 
 /************************** grid image section *****************************/
 
-div.work .grid-item:nth-child(4n + 0),
-div.work .grid-item:nth-child(4n + 1) {
+.work .grid-item:nth-child(4n + 0),
+.work .grid-item:nth-child(4n + 1) {
   width: 100%;
   max-width: 100%;
   //border-radius: 2%;
 }
 
-div.work .grid-item:nth-child(4n + 1) {
+.work .grid-item:nth-child(4n + 1) {
   background-color: var(--primary-color);
   //left: 40%;
 }
-div.work .grid-item:nth-child(4n + 0) {
+.work .grid-item:nth-child(4n + 0) {
   background-color: var(--secondary-color);
   //right: 0;
 }
 
 /********** links *********/
 
-div.work .grid-item:nth-child(4n + 0) .grid-title,
-div.work .grid-item:nth-child(4n + 1) .grid-title {
+// number / project id
+.work .grid-item:nth-child(4n + 0) .grid-title,
+.work .grid-item:nth-child(4n + 1) .grid-title {
   position: absolute;
   text-shadow: rgba(0, 0, 0, 1) 1px 1px 8px;
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: var(--numbering-text-font-size);
 }
-div.work .grid-item:nth-child(4n + 1) .grid-title {
+.work .grid-item:nth-child(4n + 1) .grid-title {
   left: calc(37.5%);
 }
-div.work .grid-item:nth-child(4n + 0) .grid-title {
+.work .grid-item:nth-child(4n + 0) .grid-title {
   right: calc(37.5%);
 }
 
-div.work .grid-item:nth-child(4n + 0) .grid-links,
-div.work .grid-item:nth-child(4n + 1) .grid-links {
+.work .grid-item:nth-child(4n + 0) .grid-links,
+.work .grid-item:nth-child(4n + 1) .grid-links {
   width: 25%;
   height: 100%;
   display: flex;
@@ -133,14 +98,14 @@ div.work .grid-item:nth-child(4n + 1) .grid-links {
   z-index: "2";
 }
 
-div.work .grid-item:nth-child(4n + 0) .grid-links {
+.work .grid-item:nth-child(4n + 0) .grid-links {
   background-image: linear-gradient(
     90deg,
     var(--secondary-gradDark-color),
     var(--secondary-gradLight-color)
   );
 }
-div.work .grid-item:nth-child(4n + 1) .grid-links {
+.work .grid-item:nth-child(4n + 1) .grid-links {
   background-image: linear-gradient(
     300deg,
     var(--primary-gradLight-color) 5%,
@@ -148,10 +113,10 @@ div.work .grid-item:nth-child(4n + 1) .grid-links {
   );
 }
 
-div.work .grid-item:nth-child(4n + 0) .grid-github,
-div.work .grid-item:nth-child(4n + 1) .grid-github,
-div.work .grid-item:nth-child(4n + 0) .grid-url,
-div.work .grid-item:nth-child(4n + 1) .grid-url {
+.work .grid-item:nth-child(4n + 0) .grid-github,
+.work .grid-item:nth-child(4n + 1) .grid-github,
+.work .grid-item:nth-child(4n + 0) .grid-url,
+.work .grid-item:nth-child(4n + 1) .grid-url {
   //background-color: var(--gray-color);
   width: 50%;
   aspect-ratio: 1 / 1;
@@ -162,10 +127,10 @@ div.work .grid-item:nth-child(4n + 1) .grid-url {
   padding: 2px;
 }
 
-div.work .grid-item:nth-child(4n + 0) .grid-url > .eye,
-div.work .grid-item:nth-child(4n + 1) .grid-url > .eye,
-div.work .grid-item:nth-child(4n + 0) .grid-github > .gh,
-div.work .grid-item:nth-child(4n + 1) .grid-github > .gh {
+.work .grid-item:nth-child(4n + 0) .grid-url > .eye,
+.work .grid-item:nth-child(4n + 1) .grid-url > .eye,
+.work .grid-item:nth-child(4n + 0) .grid-github > .gh,
+.work .grid-item:nth-child(4n + 1) .grid-github > .gh {
   width: 100%;
   height: 100%;
   * {
@@ -176,10 +141,10 @@ div.work .grid-item:nth-child(4n + 1) .grid-github > .gh {
   transition: all 300ms ease;
 }
 
-div.work .grid-item:nth-child(4n + 0) .grid-url:hover > .eye,
-div.work .grid-item:nth-child(4n + 1) .grid-url:hover > .eye,
-div.work .grid-item:nth-child(4n + 0) .grid-github:hover > .gh,
-div.work .grid-item:nth-child(4n + 1) .grid-github:hover > .gh {
+.work .grid-item:nth-child(4n + 0) .grid-url:hover > .eye,
+.work .grid-item:nth-child(4n + 1) .grid-url:hover > .eye,
+.work .grid-item:nth-child(4n + 0) .grid-github:hover > .gh,
+.work .grid-item:nth-child(4n + 1) .grid-github:hover > .gh {
   * {
     color: var(--gray-color);
   }
@@ -189,8 +154,8 @@ div.work .grid-item:nth-child(4n + 1) .grid-github:hover > .gh {
 
 /********** image *********/
 
-div.work .grid-item:nth-child(4n + 0) > .grid-image,
-div.work .grid-item:nth-child(4n + 1) > .grid-image {
+.work .grid-item:nth-child(4n + 0) > .grid-image,
+.work .grid-item:nth-child(4n + 1) > .grid-image {
   background-color: var(--primary-color); // fallback color
   width: 100%;
   height: 100%;
@@ -202,68 +167,68 @@ div.work .grid-item:nth-child(4n + 1) > .grid-image {
   opacity: 0.4;
 }
 
-div.work .grid-item:nth-child(4n + 0) .grid-url:hover,
-div.work .grid-item:nth-child(4n + 1) .grid-url:hover,
-div.work .grid-item:nth-child(4n + 0) .grid-github:hover,
-div.work .grid-item:nth-child(4n + 1) .grid-github:hover {
+.work .grid-item:nth-child(4n + 0) .grid-url:hover,
+.work .grid-item:nth-child(4n + 1) .grid-url:hover,
+.work .grid-item:nth-child(4n + 0) .grid-github:hover,
+.work .grid-item:nth-child(4n + 1) .grid-github:hover {
   cursor: pointer;
 }
 
-div.work .grid-item:nth-child(4n + 0) > .grid-image:hover,
-div.work .grid-item:nth-child(4n + 1) > .grid-image:hover {
+.work .grid-item:nth-child(4n + 0) > .grid-image:hover,
+.work .grid-item:nth-child(4n + 1) > .grid-image:hover {
   transform: scale(1.1);
   opacity: 1;
 }
 
 /************************** grid description section *****************************/
 
-div.work .grid-item:nth-child(4n + 2),
-div.work .grid-item:nth-child(4n + 3) {
-  border: dashed 2px var(--gray-color);
+.work .grid-item:nth-child(4n + 2),
+.work .grid-item:nth-child(4n + 3) {
+  border: var(--basic-border);
   padding: clamp(10px, 3vw, 40px);
   background-color: var(--lighterBlack-color);
 }
 
-div.work .grid-item:nth-child(4n + 2) > div,
-div.work .grid-item:nth-child(4n + 3) > div {
+.work .grid-item:nth-child(4n + 2) > div,
+.work .grid-item:nth-child(4n + 3) > div {
   background-image: none !important;
   //background-color: var(--lighterBlack-color);
   width: 100%;
   height: 100%;
 }
 
-div.work .grid-item:nth-child(4n + 2) .grid-description,
-div.work .grid-item:nth-child(4n + 3) .grid-description {
-  font-size: clamp(0.6rem, 1.3vw, 1.1rem);
+.work .grid-item:nth-child(4n + 2) .grid-description,
+.work .grid-item:nth-child(4n + 3) .grid-description {
+  font-size: var(--basic-text-font-size);
   text-align: justify;
 }
 
-div.work .grid-item:nth-child(4n + 2) .grid-description p:first-child,
-div.work .grid-item:nth-child(4n + 3) .grid-description p:first-child {
-  font-size: clamp(1rem, 1.7vw, 1.5rem);
+.work .grid-item:nth-child(4n + 2) .grid-description p:first-child,
+.work .grid-item:nth-child(4n + 3) .grid-description p:first-child {
+  font-size: var(--subtitle-text-font-size);
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
-div.work .grid-item:nth-child(4n + 2) .grid-description p:first-child {
+.work .grid-item:nth-child(4n + 2) .grid-description p:first-child {
   color: var(--primary-color);
 }
-div.work .grid-item:nth-child(4n + 3) .grid-description p:first-child {
+.work .grid-item:nth-child(4n + 3) .grid-description p:first-child {
   color: var(--secondary-color);
 }
 
-div.work .grid-item:nth-child(4n + 2) .grid-description span {
+.work .grid-item:nth-child(4n + 2) .grid-description span {
   color: var(--primary-color);
 }
-div.work .grid-item:nth-child(4n + 3) .grid-description span {
+.work .grid-item:nth-child(4n + 3) .grid-description span {
   color: var(--secondary-color);
 }
 
-div.work .grid-item:nth-child(4n + 2) > div:nth-child(1) {
+.work .grid-item:nth-child(4n + 2) > div:nth-child(1) {
   background-color: var(--primary-color);
   width: 1.2vw;
   margin-right: clamp(10px, 3vw, 40px);
 }
-div.work .grid-item:nth-child(4n + 3) > div:nth-child(2) {
+.work .grid-item:nth-child(4n + 3) > div:nth-child(2) {
   background-color: var(--secondary-color);
   width: 1.2vw;
   margin-left: clamp(10px, 3vw, 40px);

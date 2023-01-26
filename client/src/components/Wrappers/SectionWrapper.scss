@@ -1,32 +1,56 @@
-@import "../../App.scss";
+@import "../../themes/MainTheme.scss";
 
-div:nth-child(1) {
+.about,
+.skills,
+.work,
+.contact {
   @extend .basic-wrap;
   background-color: var(--lighterBlack-color);
   padding: var(--padding-val);
 }
 
-div:nth-child(1) .wrapper {
+.about .wrapper,
+.skills .wrapper,
+.work .wrapper,
+.contact .wrapper {
   display: flexbox;
   align-items: center;
   width: 100%;
 }
 
-div:nth-child(1) .code {
+.about .code,
+.skills .code,
+.work .code,
+.contact .code {
   @extend .code;
 }
+.about .code.end,
+.skills .code.end,
+.work .code.end,
+.contact .code.end {
+  margin: clamp(10px, 4vw, 40px) 0;
+}
 
-div:nth-child(1) .title {
-  font-size: clamp(1rem, 6vw, 4rem);
+.about .title,
+.skills .title,
+.work .title,
+.contact .title {
+  font-size: var(--section-title-font-size);
   font-weight: bolder;
 }
-div:nth-child(1) .title > span {
+.about .title > span,
+.skills .title > span,
+.work .title > span,
+.contact .title > span {
   @extend .gradient-base;
   @include gradText(120deg, 30%, 60%);
   display: inline-block;
   transform: rotate(0deg);
   transition: transform 250ms ease-in-out;
 }
-div:nth-child(1) .title > span:hover {
+.about .title > span:hover,
+.skills .title > span:hover,
+.work .title > span:hover,
+.contact .title > span:hover {
   transform: rotate(7deg);
 }

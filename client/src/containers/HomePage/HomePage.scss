@@ -1,13 +1,13 @@
-@import "../../App.scss";
+@import "../../themes/MainTheme.scss";
 
-div.home {
+.home {
   @extend .basic-wrap;
   overflow-x: hidden;
   height: 100vh;
   padding: var(--padding-val);
 }
 
-div.home .wrapper {
+.home .wrapper {
   @extend .content-wrap;
 }
 
@@ -25,7 +25,7 @@ div.home .wrapper {
 /* IMAGE -------------------------------------------------------- */
 
 // bunny image wrapper
-div.home .img-wrapper {
+.home .img-wrapper {
   position: relative;
   left: 50vw;
   top: max(-17vw, -8vw);
@@ -33,7 +33,7 @@ div.home .img-wrapper {
 }
 
 // bunny image
-div.home .wrapper > div:first-child > img {
+.home .wrapper > div:first-child > img {
   content: url("./../../assets/bunnyTitle6.svg");
   width: clamp(10rem, 48vw, 48vw);
   height: auto;
@@ -47,51 +47,58 @@ div.home .wrapper > div:first-child > img {
 }
 
 @media (min-width: 1301px) {
-  div.home .wrapper > div:first-child {
+  .home .wrapper > div:first-child {
     left: 40vw;
   }
 }
 
 @media (max-height: 500px) {
-  div.home {
+  .home {
     height: 100%;
   }
 }
 
 /* TEXT --------------------------------------------------------------------- */
 
-div.home .text-wrapper {
+.home .text-wrapper {
   position: relative;
   white-space: nowrap;
   text-transform: capitalize;
 }
 
-div.home .code {
+.home .code {
   @extend .code;
 }
-div.home .code.end {
+.home .code.end {
   margin: clamp(5px, 2vw, 15px) 0;
 }
 
-div.home .greeting,
-div.home .profession {
+.home .greeting,
+.home .profession {
   font-size: clamp(1.2rem, 8vw, 5rem);
   font-weight: bolder;
 }
-div.home .greeting {
+.home .greeting {
   @include bounce-in("400ms");
 }
-div.home .profession {
+.home .profession {
   @include bounce-in("1000ms");
 }
 
-div.home .name {
+.home .name {
   font-size: clamp(1.2rem, 8vw, 4.8rem);
   font-weight: bolder;
   @include bounce-in("700ms");
 }
 
-div.home .name > span {
+.home .role {
+  font-size: clamp(0.7rem, 2.8vw, 1.7rem);
+  color: var(--gray-color);
+  @include bounce-in("900ms");
+}
+
+// ***** special name "PETRA" ***** //
+.home .name > span {
   @extend .gradient-base;
   display: inline-block;
   //vertical-align: sub;
@@ -99,25 +106,19 @@ div.home .name > span {
   border-bottom: 0px dashed var(--gray-color);
   transition: transform 250ms ease-in-out;
 }
-div.home .name > span:nth-child(even) {
+.home .name > span:nth-child(even) {
   @include gradText(120deg, 30%, 60%);
 }
-div.home .name > span:nth-child(odd) {
+.home .name > span:nth-child(odd) {
   @include gradText(190deg, 48%, 50%);
 }
-div.home .name > span:nth-child(even):hover {
+.home .name > span:nth-child(even):hover {
   transform: rotate(7deg);
-  border-bottom: 2px dashed var(--gray-color);
+  border-bottom: var(--basic-border);
 }
-div.home .name > span:nth-child(odd):hover {
+.home .name > span:nth-child(odd):hover {
   transform: rotate(-7deg);
-  border-bottom: 2px dashed var(--gray-color);
-}
-
-div.home .role {
-  font-size: clamp(0.7rem, 2.8vw, 1.7rem);
-  color: var(--gray-color);
-  @include bounce-in("900ms");
+  border-bottom: var(--basic-border);
 }
 
 /* ANIMATION gfx */

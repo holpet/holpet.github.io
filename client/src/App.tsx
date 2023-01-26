@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./App.scss";
 import {
   Home,
@@ -17,7 +17,7 @@ const App = () => {
   const appRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    AOS.init({ duration: 800 });
+    AOS.init({ duration: 800, startEvent: "load", offset: 50 });
   }, []);
 
   return (

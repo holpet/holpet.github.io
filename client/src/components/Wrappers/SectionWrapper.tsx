@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 import "./SectionWrapper.scss";
 
 interface props {
   children: React.ReactNode;
   section: string;
+  char: string;
+  title: string;
 }
 
-const SectionWrapper = ({ children, section }: props) => {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
-
+const SectionWrapper = ({ children, section, char, title }: props) => {
   return (
     <div className={section}>
       <div className="wrapper">
-        <p className="code">&lt;About&gt;</p>
-        <p className="title">
-          <span data-aos="fade-down-right">私</span> My Story...
+        <p className="code">&lt;{section}&gt;</p>
+        <p className="title" data-aos="fade-down" data-aos-duration="600">
+          <span>{char}</span> {title}
         </p>
+
+        {/* Work start */}
         {children}
-        <p className="code">&lt;/About&gt;</p>
+        {/* Work end */}
+
+        <p className="code end">&lt;/{section}&gt;</p>
       </div>
     </div>
   );

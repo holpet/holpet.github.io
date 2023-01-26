@@ -7,11 +7,9 @@
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
-  font-size: clamp(0.6rem, 1.5vw, 2rem);
 }
 
 .card__face {
-  position: relative;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
@@ -19,14 +17,13 @@
 
 .card__face--front,
 .card__face--back {
-  font-size: clamp(0.6rem, 1.3vw, 1.1rem);
+  font-size: var(--basic-text-font-size);
   padding: clamp(0.6rem, 2vw, 3rem);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  //border-radius: 2%;
 }
 .card__face--front {
   text-transform: uppercase;
@@ -61,11 +58,25 @@
 
 /* ******** text container *********** */
 
+.card-text-container {
+  width: 100%;
+}
+
 .card-text-container img {
-  width: clamp(7rem, 10vw, 25rem);
+  width: clamp(6rem, 8vw, 24rem);
   height: auto;
   filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.7));
 }
+.card-text-container img:nth-child(2) {
+  transform: rotate(0deg);
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+}
+.card-text-container img:nth-child(2).skill-rotated {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
 .card-text-container span {
   font-weight: bolder;
   text-transform: uppercase;
@@ -74,13 +85,21 @@
   text-align: left;
 }
 
+.card-text-container .skill-percent {
+  font-size: clamp(2rem, 1.8vw, 4.6rem);
+}
+.card-text-container .skill-percent b {
+  text-transform: uppercase;
+  font-size: var(--card-basic-font-size);
+}
+
 .card-text-container > div {
   color: var(--white-color);
   text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 8px;
   padding: 5px 0;
 }
 
-.skill-line.is-loading-line#skill-html {
+.skill-line.is-loading-line#skill-js {
   width: 90% !important;
   transition: all 2s ease-in-out;
 }
@@ -93,10 +112,10 @@
   transition: all 1.6s ease-in-out;
 }
 .skill-line.is-loading-line#skill-python {
-  width: 60% !important;
+  width: 45% !important;
   transition: all 1.5s ease-in-out;
 }
-#skill-html,
+#skill-js,
 #skill-react,
 #skill-node,
 #skill-python {
@@ -113,8 +132,8 @@
   background: transparent;
   box-shadow: var(--black-color) 2px 1px 15px;
 }
-#skill-html,
-#skill-react {
+#skill-js,
+#skill-python {
   background: linear-gradient(
     120deg,
     var(--primary-gradDark-color),
@@ -122,7 +141,7 @@
   );
 }
 #skill-node,
-#skill-python {
+#skill-react {
   background: linear-gradient(
     120deg,
     var(--secondary-gradDark-color),
@@ -148,14 +167,4 @@ hr {
   padding-bottom: clamp(2rem, 3vw, 5rem);
   color: transparent;
   border: 0;
-}
-
-.card-text-container img:nth-child(2) {
-  transform: rotate(0deg);
-  opacity: 0;
-  transition: all 1.5s ease-in-out;
-}
-.card-text-container img:nth-child(2).skill-rotated {
-  transform: rotate(180deg);
-  opacity: 1;
 }

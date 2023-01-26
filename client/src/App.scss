@@ -1,14 +1,14 @@
+@import "./themes/MainTheme.scss";
+
 // APP LAYOUT
 .app-navbar {
   position: sticky;
   top: 0;
   height: 100vh;
   grid-area: navig;
-  background-color: var(--black-color);
 }
 .app-content {
   grid-area: content;
-  scrollbar-color: dark;
   overflow-x: hidden;
 }
 
@@ -17,6 +17,7 @@
   grid-template-columns: 230px auto;
   grid-template-areas: "navig content";
   //display: none;
+  // TODO: opacity transition ?
 }
 @media (max-width: 1300px) {
   .app-wrapper {
@@ -28,171 +29,4 @@
     height: auto;
     top: auto;
   }
-}
-
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-}
-
-/* GFX -------------------------------------------------------- */
-
-// BASIC ---------------> ///////
-
-// Basic page properties
-.basic-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  //padding: var(--padding-val);
-}
-.content-wrap {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.code {
-  font-family: var(--font-handWritten);
-  font-size: clamp(0.8rem, 3vw, 2rem);
-  color: var(--gray-color);
-}
-// .code:nth-child(even) {
-//   margin-top: 20px;
-// }
-
-:root {
-  //Design
-  --padding-val: clamp(20px, 3.5vw, 55px);
-}
-
-// TITLING ---------------> ///////
-
-// Titles
-.gradient-base {
-  background-size: 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  text-transform: uppercase;
-}
-
-/* GRADIENT TEXTS */
-.gradient-text-primary {
-  @extend .gradient-base;
-  background-image: linear-gradient(
-    90deg,
-    var(--primary-gradDark-color),
-    var(--primary-gradLight-color)
-  );
-}
-
-.gradient-text-secondary {
-  @extend .gradient-base;
-  background-image: linear-gradient(
-    120deg,
-    var(--secondary-gradDark-color) 35%,
-    var(--primary-color) 80%
-  );
-}
-
-@mixin gradText($deg-val, $clr1-val, $clr2-val) {
-  background-image: linear-gradient(
-    $deg-val,
-    var(--primary-gradLight-color) 10%,
-    var(--primary-color) $clr1-val,
-    var(--secondary-gradDark-color) $clr2-val
-  );
-}
-
-.squared-text {
-  font-family: var(--font-square);
-}
-
-/* GRADIENT LINK */
-
-.gradient-link {
-  display: table;
-  text-decoration: none;
-  box-shadow: 7px 4px 20px 1px rgba(0, 0, 0, 0.15);
-  padding: 0.8em 1.6em;
-  cursor: pointer;
-  margin: 1.2vw 0px;
-  //border: 2px var(--gray-color) dashed;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.gradient-link-text-base {
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: clamp(0.3rem, 2.5vw, 1.5rem);
-  text-align: center;
-  width: 100%;
-}
-
-.gradient-link > span:first-child {
-  @extend .gradient-text-secondary;
-  @extend .gradient-link-text-base;
-  opacity: 1;
-  position: absolute;
-}
-
-.gradient-link > span:nth-child(2) {
-  //@extend .gradient-text-primary;
-  color: var(--gray-color);
-  font-weight: lighter;
-  @extend .gradient-link-text-base;
-  opacity: 0;
-  position: relative;
-}
-
-.gradient-link > div {
-  border: 2px var(--gray-color) dashed;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: all 250ms ease-in-out;
-}
-
-.gradient-link > span {
-  transition: opacity 300ms ease-in-out;
-}
-.gradient-link:hover > span:nth-child(1) {
-  opacity: 0;
-}
-.gradient-link:hover > span:nth-child(2) {
-  opacity: 1;
-}
-.gradient-link:hover > div {
-  border: 0.3vw var(--gray-color) solid;
-  border-image-source: linear-gradient(
-    to left,
-    var(--primary-gradLight-color),
-    var(--primary-gradDark-color)
-  );
-  border-image-slice: 1;
-}
-
-/////// gradient touch ///////
-
-.gradient-border {
-  border: 0.3vw var(--gray-color) solid;
-  border-image-source: linear-gradient(
-    to left,
-    var(--primary-gradLight-color),
-    var(--primary-gradDark-color)
-  );
-  border-image-slice: 1;
 }

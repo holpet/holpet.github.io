@@ -1,4 +1,4 @@
-@import "../../App.scss";
+@import "../../themes/MainTheme.scss";
 
 header {
   position: fixed;
@@ -26,11 +26,4 @@ header {
   #menu:hover {
     cursor: pointer;
   }
-
-  // div.header > div:first-child {
-  //   padding: 10px;
-  //   text-shadow: 10px black;
-  //   border-radius: 10%;
-  //   background-color: rgba(0, 0, 0, 0.2);
-  // }
 }

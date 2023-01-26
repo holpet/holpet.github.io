@@ -1,50 +1,12 @@
-@import "../../App.scss";
-
-div.about {
-  @extend .basic-wrap;
-  background-color: var(--lighterBlack-color);
-  padding: var(--padding-val);
-}
-
-div.about .wrapper {
-  display: flexbox;
-  align-items: center;
-  width: 100%;
-}
-
 // mixins
 @mixin swing($durTime, $waitTime1, $waitTime2) {
   animation: waiting #{$waitTime1},
     swing #{$durTime} #{$waitTime2} ease infinite;
 }
 
-/* TEXT -------------------------------------------------------- */
-
-div.about .code {
-  @extend .code;
-}
-div.work .code.end {
-  margin: clamp(10px, 2vw, 20px) 0;
-}
-
-div.about .title {
-  font-size: clamp(1rem, 6vw, 4rem);
-  font-weight: bolder;
-}
-div.about .title > span {
-  @extend .gradient-base;
-  @include gradText(120deg, 30%, 60%);
-  display: inline-block;
-  transform: rotate(0deg);
-  transition: transform 250ms ease-in-out;
-}
-div.about .title > span:hover {
-  transform: rotate(7deg);
-}
-
 /* GRID ************************************** */
 
-div.about .grid {
+.about .grid {
   display: grid;
   grid-template-columns: auto auto;
   grid-auto-rows: 1fr;
@@ -54,91 +16,91 @@ div.about .grid {
   margin: 2vw 0;
 }
 
-div.about .grid-item {
+.about .grid-item {
   border: 5px solid var(--primary-color);
-  font-size: clamp(0.6rem, 1.3vw, 1.1rem);
+  font-size: var(--basic-text-font-size);
   text-align: justify;
 }
 
 @media (max-width: 800px) {
-  div.about .grid {
+  .about .grid {
     grid-template-columns: auto;
     column-count: 1;
     padding-bottom: 0px;
     grid-auto-rows: auto;
   }
-  div.about .grid-item {
+  .about .grid-item {
     grid-template-columns: auto;
     column-count: 1;
   }
-  div.about .grid-item:nth-child(2),
-  div.about .grid-item:nth-child(3),
-  div.about .grid-item:nth-child(6) {
+  .about .grid-item:nth-child(2),
+  .about .grid-item:nth-child(3),
+  .about .grid-item:nth-child(6) {
     display: none !important;
   }
-  div.about .grid-item:nth-child(1) {
+  .about .grid-item:nth-child(1) {
     border-bottom: 5px solid var(--primary-color) !important;
     padding-bottom: 12px;
   }
-  div.about .grid-item:nth-child(4) {
+  .about .grid-item:nth-child(4) {
     border-bottom: 5px solid var(--secondary-color) !important;
     padding-bottom: 12px;
   }
-  div.about .grid-item:nth-child(5) {
+  .about .grid-item:nth-child(5) {
     padding-bottom: 0px;
   }
-  div.about .box1 {
+  .about .box1 {
     border-width: 0 2px 0 2px !important;
     margin: 0 0 0 10px;
   }
-  div.about .box2 {
+  .about .box2 {
     border-width: 2px 0 2px 0 !important;
     margin: 0 10px 0 0;
   }
-  div.about .box3 {
+  .about .box3 {
     border-width: 2px 0 0 2px !important;
     margin: 0 0 0 10px;
   }
-  div.about .box1,
-  div.about .box2,
-  div.about .box3 {
+  .about .box1,
+  .about .box2,
+  .about .box3 {
     display: block !important;
     width: 50% !important;
     border: var(--gray-color) dashed;
   }
-  div.about .grid-item:nth-child(1),
-  div.about .grid-item:nth-child(4),
-  div.about .grid-item:nth-child(5) {
+  .about .grid-item:nth-child(1),
+  .about .grid-item:nth-child(4),
+  .about .grid-item:nth-child(5) {
     display: flex !important;
   }
 }
 
 @media (max-width: 420px) {
-  div.about .grid {
+  .about .grid {
     grid-auto-rows: auto;
   }
-  div.about .box1,
-  div.about .box2,
-  div.about .box3 {
+  .about .box1,
+  .about .box2,
+  .about .box3 {
     display: none !important;
   }
 }
 
-div.about .grid-item .box {
+.about .grid-item .box {
   display: none;
 }
 
 // TEXT -------------------------------------------- //
-div.about .grid-item:nth-child(1),
-div.about .grid-item:nth-child(4),
-div.about .grid-item:nth-child(5) {
+.about .grid-item:nth-child(1),
+.about .grid-item:nth-child(4),
+.about .grid-item:nth-child(5) {
   border: none;
 }
 
 // GFX with text ----------------------------------- //
-div.about .grid-item:nth-child(2),
-div.about .grid-item:nth-child(3),
-div.about .grid-item:nth-child(6) {
+.about .grid-item:nth-child(2),
+.about .grid-item:nth-child(3),
+.about .grid-item:nth-child(6) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,13 +108,13 @@ div.about .grid-item:nth-child(6) {
 
 // animate text inside borders
 
-div.about .grid-item:nth-child(2) > div > div {
+.about .grid-item:nth-child(2) > div > div {
   @include swing("6s", "1s", "1s");
 }
-div.about .grid-item:nth-child(3) > div > div {
+.about .grid-item:nth-child(3) > div > div {
   @include swing("6s", "1s", "3s");
 }
-div.about .grid-item:nth-child(6) > div > div {
+.about .grid-item:nth-child(6) > div > div {
   @include swing("6s", "1s", "5s");
 }
 
@@ -200,11 +162,11 @@ div.about .grid-item:nth-child(6) > div > div {
 // GFX BORDER ----------------------------------------- //
 
 /**************** 2 ****************/
-div.about .grid-item:nth-child(2) {
+.about .grid-item:nth-child(2) {
   border-top: 5px solid var(--primary-color);
-  border-bottom: 2px var(--gray-color) dashed;
-  border-left: 2px var(--gray-color) dashed;
-  border-right: 2px var(--gray-color) dashed;
+  border-bottom: var(--basic-border);
+  border-left: var(--basic-border);
+  border-right: var(--basic-border);
   mask-image: linear-gradient(
     to left,
     rgba(0, 0, 0, 1) 40%,
@@ -212,13 +174,13 @@ div.about .grid-item:nth-child(2) {
   );
   transition: all 300ms ease-in-out;
 }
-div.about .grid-item:nth-child(2):hover {
+.about .grid-item:nth-child(2):hover {
   border-top: 5px solid var(--secondary-color);
 }
-div.about .grid-item:nth-child(2):hover > div:nth-child(1) {
+.about .grid-item:nth-child(2):hover > div:nth-child(1) {
   border-bottom: 5px solid var(--secondary-gradLight-color);
 }
-div.about .grid-item:nth-child(2) > div:nth-child(1) {
+.about .grid-item:nth-child(2) > div:nth-child(1) {
   position: absolute;
   border-bottom: 5px solid var(--primary-color);
   width: 90%;
@@ -227,21 +189,21 @@ div.about .grid-item:nth-child(2) > div:nth-child(1) {
   right: 0;
   transition: all 1000ms ease-in-out;
 }
-div.about .grid-item:nth-child(2) > div {
+.about .grid-item:nth-child(2) > div {
   transform: scale(1);
   transition: transform 300ms ease-in-out;
 }
-div.about .grid-item:nth-child(2):hover > div {
+.about .grid-item:nth-child(2):hover > div {
   transform: scale(1.15);
 }
 
 /**************** 3 ****************/
-div.about .grid-item:nth-child(3) {
+.about .grid-item:nth-child(3) {
   position: relative;
   border-top: 5px solid var(--secondary-color);
-  border-bottom: 2px var(--gray-color) dashed;
+  border-bottom: var(--basic-border);
   border-left: 5px solid var(--secondary-color);
-  border-right: 2px var(--gray-color) dashed;
+  border-right: var(--basic-border);
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 1) 35%,
@@ -249,14 +211,14 @@ div.about .grid-item:nth-child(3) {
   );
   transition: all 300ms ease-in-out;
 }
-div.about .grid-item:nth-child(3):hover {
+.about .grid-item:nth-child(3):hover {
   border-top: 5px solid var(--primary-color);
   border-left: 5px solid var(--primary-gradLight-color);
 }
-div.about .grid-item:nth-child(3):hover > div:nth-child(1) {
+.about .grid-item:nth-child(3):hover > div:nth-child(1) {
   border-bottom: 5px solid var(--primary-color);
 }
-div.about .grid-item:nth-child(3) > div:nth-child(1) {
+.about .grid-item:nth-child(3) > div:nth-child(1) {
   position: absolute;
   border-bottom: 5px solid var(--secondary-color);
   width: 70%;
@@ -264,19 +226,19 @@ div.about .grid-item:nth-child(3) > div:nth-child(1) {
   bottom: -2px;
   transition: all 700ms ease-in-out;
 }
-div.about .grid-item:nth-child(3) > div {
+.about .grid-item:nth-child(3) > div {
   transform: scale(1);
   transition: all 300ms ease-in-out;
 }
-div.about .grid-item:nth-child(3):hover > div {
+.about .grid-item:nth-child(3):hover > div {
   transform: scale(1.15);
 }
 
 /**************** 6 ****************/
-div.about .grid-item:nth-child(6) {
+.about .grid-item:nth-child(6) {
   position: relative;
-  border-top: 2px var(--gray-color) dashed;
-  border-bottom: 2px var(--gray-color) dashed;
+  border-top: var(--basic-border);
+  border-bottom: var(--basic-border);
   border-left: 5px solid var(--primary-color);
   border-right: 5px solid var(--primary-color);
   mask-image: linear-gradient(
@@ -286,14 +248,14 @@ div.about .grid-item:nth-child(6) {
   );
   transition: all 500ms ease-in-out;
 }
-div.about .grid-item:nth-child(6):hover {
+.about .grid-item:nth-child(6):hover {
   border-left: 5px solid var(--secondary-color);
   border-right: 5px solid var(--secondary-color);
 }
-div.about .grid-item:nth-child(6):hover > div:nth-child(1) {
+.about .grid-item:nth-child(6):hover > div:nth-child(1) {
   border-top: 5px solid var(--secondary-gradLight-color);
 }
-div.about .grid-item:nth-child(6) > div:nth-child(1) {
+.about .grid-item:nth-child(6) > div:nth-child(1) {
   position: absolute;
   border-top: 5px solid var(--primary-color);
   width: 10%;
@@ -302,10 +264,10 @@ div.about .grid-item:nth-child(6) > div:nth-child(1) {
   right: 0;
   transition: all 800ms ease-in-out;
 }
-div.about .grid-item:nth-child(6) > div {
+.about .grid-item:nth-child(6) > div {
   transform: scale(1);
   transition: transform 300ms ease-in-out;
 }
-div.about .grid-item:nth-child(6):hover > div {
+.about .grid-item:nth-child(6):hover > div {
   transform: scale(1.15);
 }

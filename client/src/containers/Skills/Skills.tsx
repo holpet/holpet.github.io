@@ -1,40 +1,23 @@
-import React, { useEffect } from "react";
 import "./Skills.scss";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import TagSphere from "./TagSphere";
-import FlipCard from "./FlipCard";
+import TagSphere from "./components/TagSphere";
+import FlipCard from "./components/FlipCard";
+import SectionWrapper from "../../components/Wrappers/SectionWrapper";
 
 const Skills = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
-
   return (
-    <div className="skills">
-      <div className="wrapper">
-        <p className="code">&lt;Skills&gt;</p>
-        <p className="title" data-aos="fade-down" data-aos-duration="600">
-          <span>学</span> What can I do...
-        </p>
-
-        {/* Skills start */}
-        <div className="grid">
-          <div className="grid-item">
-            <FlipCard text="CLICK ME" card="left" />
-          </div>
-          <div className="grid-item">
-            <TagSphere />
-          </div>
-          <div className="grid-item">
-            <FlipCard text="CLICK ME" card="right" />
-          </div>
+    <SectionWrapper section="skills" char="学" title="What can I do...">
+      <div className="grid">
+        <div className="grid-item">
+          <FlipCard text="HELLO" card="left" />
         </div>
-        {/* Skills end */}
-
-        <p className="code end">&lt;/Skills&gt;</p>
+        <div className="grid-item">
+          <TagSphere />
+        </div>
+        <div className="grid-item">
+          <FlipCard text="WORLD" card="right" />
+        </div>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 

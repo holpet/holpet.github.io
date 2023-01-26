@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useAtom } from "jotai";
 import { atomIsClosed as closed } from "../../lib/atoms/Atoms";
 import "./Navbar.scss";

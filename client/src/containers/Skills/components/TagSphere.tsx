@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./TagSphere.scss";
-import { SKILLS } from "../../lib/constants/Constants";
-import { boat } from "../../assets";
+import { SKILLS } from "../../../lib/constants/Constants";
+import { boat } from "../../../assets";
 
 declare const window: any;
 
