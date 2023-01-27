@@ -31,16 +31,24 @@ const Navbar = () => {
 
         <nav className="nav-links">
           <div>
-            <a href="#">About</a>
+            <a href="#about-section" onClick={() => setIsClosed(true)}>
+              About
+            </a>
           </div>
           <div>
-            <a href="#">Skills</a>
+            <a href="#skills-section" onClick={() => setIsClosed(true)}>
+              Skills
+            </a>
           </div>
           <div>
-            <a href="#">Work</a>
+            <a href="#work-section" onClick={() => setIsClosed(true)}>
+              Work
+            </a>
           </div>
           <div>
-            <a href="#">Contact</a>
+            <a href="#contact-section" onClick={() => setIsClosed(true)}>
+              Contact
+            </a>
           </div>
         </nav>
         <ul className="flag-icons">
@@ -48,17 +56,23 @@ const Navbar = () => {
             src={cz}
             id="cz"
             className={`${isActive && "active"}`}
-            onClick={() => setIsActive(!isActive)}
+            onClick={() => {
+              setIsActive(!isActive);
+              setIsClosed(true);
+            }}
           />
           <img
             src={uk}
             id="uk"
             className={`${!isActive && "active"}`}
-            onClick={() => setIsActive(!isActive)}
+            onClick={() => {
+              setIsActive(!isActive);
+              setIsClosed(true);
+            }}
           />
         </ul>
         <ul className="social-icons">
-          <a href="https://github.com/holpet">
+          <a href="https://github.com/holpet" onClick={() => setIsClosed(true)}>
             <Github id="github" />
           </a>
         </ul>

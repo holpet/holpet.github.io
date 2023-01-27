@@ -13,16 +13,23 @@ const Contact = () => {
   }, []);
 
   return (
-    <SectionWrapper section="contact" char="会" title="How to reach me...">
-      <div className="grid">
-        <div className="grid-item">
-          <ContactForm formRef={formRef} />
+    <div id="contact-section">
+      <SectionWrapper section="contact" char="会" title="How to reach me...">
+        <div className="grid">
+          <div className="grid-item">
+            <ContactForm formRef={formRef} />
+          </div>
+          <div className="grid-item">
+            <img
+              src={paperplane}
+              style={{ height: formHeight }}
+              data-aos="flip-right"
+              data-aos-duration="2000"
+            />
+          </div>
         </div>
-        <div className="grid-item">
-          <img src={paperplane} style={{ height: formHeight }} />
-        </div>
-      </div>
-    </SectionWrapper>
+      </SectionWrapper>
+    </div>
   );
 };
 

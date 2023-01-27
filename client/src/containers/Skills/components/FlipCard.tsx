@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./FlipCard.scss";
 import { boat_blue, boat_purple } from "../../../assets";
+import { SKILLS_CARD } from "../../../lib/constants/Constants";
+import { employObserver } from "../../../lib/utils/Observer";
 
 interface props {
   text: string;
@@ -8,55 +10,28 @@ interface props {
 }
 
 const FlipCard = ({ text, card }: props) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsFlipped(true);
+    employObserver(cardRef);
   }, []);
 
   return (
-    <div className={`card`}>
+    <div className={`card`} ref={cardRef}>
       {card === "left" ? (
         <div className="card-text-container">
           <img src={boat_blue} />
           <div>
-            <div>
-              <span className="skill-percent">
-                % <b className="skill-para">used in projects:</b>
-              </span>
-              <br />
-              <span>JavaScript, TypeScript</span>
-              <div
-                className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
-                id="skill-js"
-              ></div>
-              <div className="skill-line skill-underline"></div>
-            </div>
-            <div>
-              <span>Python, Java</span>
-              <div
-                className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
-                id="skill-python"
-              ></div>
-              <div className="skill-line skill-underline"></div>
-            </div>
+            <span className="skill-percent">
+              % <b className="skill-para">used in projects:</b>
+            </span>
             <br />
-            <div>
-              <span>React / Next</span>
-              <div
-                className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
-                id="skill-react"
-              ></div>
-              <div className="skill-line skill-underline"></div>
-            </div>
-            <div>
-              <span>Node, MongoDB</span>
-              <div
-                className={`skill-line ${isFlipped ? "is-loading-line" : ""}`}
-                id="skill-node"
-              ></div>
-              <div className="skill-line skill-underline"></div>
-            </div>
+            {SKILLS_CARD.map((skill, i) => (
+              <div key={skill.id}>
+                <SkillLine skill={skill.name} id={skill.id} />
+                {i === 1 && <br />}
+              </div>
+            ))}
           </div>
 
           <br />
@@ -85,12 +60,24 @@ const FlipCard = ({ text, card }: props) => {
               upon for custom solutions.
             </p>
           </div>
-          <img
-            src={boat_purple}
-            className={`${isFlipped ? "skill-rotated" : ""}`}
-          />
+          <img src={boat_purple} className={`skill-rotated`} />
         </div>
       )}
+    </div>
+  );
+};
+
+interface propsLine {
+  skill: string;
+  id: string;
+}
+
+const SkillLine = ({ skill, id }: propsLine) => {
+  return (
+    <div>
+      <span>{skill}</span>
+      <div className={`skill-line observable`} id={id}></div>
+      <div className="skill-line skill-underline"></div>
     </div>
   );
 };

@@ -25,9 +25,9 @@ const App = () => {
       <div className={`app-navbar`}>
         <Navbar />
       </div>
-      <div className="app-content" data-aos="fade-left" data-aos-delay="400">
+      <div className="app-content">
         <Header />
-        <main className="app-main">
+        <main className="app-main" data-aos="fade-left" data-aos-delay="400">
           <Home />
           <About />
           <Skills />

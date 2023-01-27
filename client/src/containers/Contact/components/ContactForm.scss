@@ -23,16 +23,17 @@
   font-size: var(--basic-text-font-size);
   font-family: var(--font-base);
   color: var(--lightGray-color);
-  background-color: var(--darkGray-color);
+  background-color: var(--lightBlack-color);
   border: none;
-  border-right: clamp(0.5rem, 5vw, 2rem) solid var(--gray-color) !important;
+  //border-right: clamp(0.5rem, 5vw, 2rem) solid var(--gray-color) !important;
+  border-bottom: 2px dashed var(--gray-color) !important;
   margin: clamp(0.2rem, 1vw, 0.6rem) 0;
   outline: none;
 }
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
-  border-right: clamp(0.5rem, 5vw, 2rem) solid var(--secondary-color) !important;
+  //border-right: clamp(0.5rem, 5vw, 2rem) solid var(--secondary-color) !important;
   box-shadow: none;
 }
 

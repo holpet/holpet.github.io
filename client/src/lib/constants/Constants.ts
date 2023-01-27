@@ -19,3 +19,10 @@ export const SKILLS = [
   { href: "#oauth_", title: "OAuth", weight: 2 },
   { href: "#premier-pro_", title: "After Effects", weight: 2 },
 ];
+
+export const SKILLS_CARD = [
+  { id: "skill-js", name: "JavaScript, TypeScript" },
+  { id: "skill-python", name: "Python, Java" },
+  { id: "skill-react", name: "React / Next" },
+  { id: "skill-node", name: "Node, MongoDB" },
+];

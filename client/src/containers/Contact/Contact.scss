@@ -5,12 +5,12 @@
   grid-template-columns: 1.5fr 1fr;
   grid-auto-rows: 1fr;
   grid-column: 2;
-  column-gap: 4rem;
+  column-gap: clamp(2.5rem, 2vw, 4rem);
   width: 100%;
   margin: 2vw 0;
-  padding: 2vw 0;
-  border-top: var(--basic-border);
-  border-bottom: var(--basic-border);
+  padding: 3vw 0;
+  border-top: 3px solid var(--secondary-color);
+  border-bottom: 4px solid var(--primary-color);
   align-items: center;
   justify-content: center;
 }
@@ -18,10 +18,18 @@
 .contact .grid-item {
   align-self: center;
   height: min-content !important;
+  width: 100% !important;
 }
 
 .contact .grid-item img {
   width: 100%;
   height: auto;
   max-height: 40vh;
+}
+
+@media (max-width: 800px) {
+  .contact .grid {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+  }
 }

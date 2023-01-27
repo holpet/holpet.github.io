@@ -32,7 +32,7 @@ const HomePage = () => {
               </p>
               <p className="profession">Web developer.</p>
               <p className="role">Full Stack || Code and learn</p>
-              <PrimaryLink text="contact" type="contact" />
+              <PrimaryLink text="contact" elemType="button" />
               <p className="code end">&lt;/Home&gt;</p>
             </div>
           </div>

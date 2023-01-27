@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import PrimaryLink from "../../../components/Links/PrimaryLink";
 import "./ContactForm.scss";
+import emailjs from "@emailjs/browser";
 
 interface props {
   formRef: React.RefObject<HTMLFormElement>;
@@ -9,7 +10,23 @@ interface props {
 const ContactForm = ({ formRef }: props) => {
   function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("submitted...");
+    if (formRef.current === null) return;
+    emailjs
+      .sendForm(
+        "service_holpet_dev",
+        "template_6yu0va4",
+        formRef.current,
+        "otk4aPrbtwUmy7tsV"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    formRef.current.reset();
   }
 
   function handleOnChange() {}
@@ -19,12 +36,14 @@ const ContactForm = ({ formRef }: props) => {
       <div>
         <input
           type="text"
+          name="name"
           placeholder="Your Name"
           onChange={handleOnChange}
           spellCheck="false"
         />
         <input
           type="email"
+          name="email"
           placeholder="Your Email"
           onChange={handleOnChange}
           spellCheck="false"
@@ -32,20 +51,19 @@ const ContactForm = ({ formRef }: props) => {
       </div>
       <input
         type="text"
+        name="subject"
         placeholder="Subject"
         onChange={handleOnChange}
         spellCheck="false"
       />
-      <textarea onChange={handleOnChange} rows={4} spellCheck="false" />
-      <div
-        onClick={(e) => {
-          formRef.current?.submit();
-          e.preventDefault();
-        }}
-      >
-        <PrimaryLink text="submit" type="submit" />
-      </div>
-      <input type="submit" value="Submit" />
+      <textarea
+        onChange={handleOnChange}
+        name="message"
+        rows={4}
+        spellCheck="false"
+        placeholder="Message..."
+      />
+      <PrimaryLink text="submit" elemType="submit" />
     </form>
   );
 };

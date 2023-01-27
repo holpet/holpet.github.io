@@ -6,6 +6,7 @@
   top: 0;
   height: 100vh;
   grid-area: navig;
+  overflow: hidden;
 }
 .app-content {
   grid-area: content;

@@ -1,8 +1,8 @@
-import React from "react";
 import "./Footer.scss";
 
 const Footer = () => {
-  return <div className="footer">Footer</div>;
+  const date = new Date().getFullYear();
+  return <div className="footer">HolPet | Petra Holavová @ {date}</div>;
 };
 
 export default Footer;

@@ -2,26 +2,36 @@ import "./PrimaryLink.scss";
 
 interface props {
   text: string;
-  type: string;
-  isSubmitted?: React.Dispatch<React.SetStateAction<boolean>>;
+  elemType: string;
 }
 
-const PrimaryLink = ({ text, type, isSubmitted }: props) => {
-  function handleOnClick(e: React.MouseEvent<HTMLElement>) {
-    e.preventDefault();
-    if (type === "submit") {
-      if (isSubmitted !== undefined) isSubmitted(true);
-    } else {
-      console.log("clicked on contact...");
-    }
-  }
-
+const PrimaryLink = ({ text, elemType }: props) => {
   return (
-    <a href="#" className="gradient-link">
+    <>
+      {elemType === "button" ? (
+        <a href="#contact-section" className="gradient-link">
+          <ButtonLink text={text} />
+        </a>
+      ) : (
+        <button type="submit" className="gradient-link">
+          <ButtonLink text={text} />
+        </button>
+      )}
+    </>
+  );
+};
+
+interface linkProps {
+  text: string;
+}
+
+const ButtonLink = ({ text }: linkProps) => {
+  return (
+    <>
       <span>{text}</span>
       <span>{text}</span>
       <div></div>
-    </a>
+    </>
   );
 };
 
