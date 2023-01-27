@@ -10,6 +10,10 @@
   font-family: JennaSue;
   src: url(/fonts/JennaSue.ttf);
 }
+@font-face {
+  font-family: Modeseven;
+  src: url(/fonts/Modeseven.ttf);
+}
 
 :root {
   // basic colors
@@ -27,13 +31,14 @@
   --black-color: #161616;
   --lighterBlack-color: #1d1d1d;
   --gray-color: #797979;
-  --darkGray-color: #494949;
-  --lightGray-color: #bdbdbd;
+  --darkGray-color: #3a3a3a;
+  --lightGray-color: #cecece;
 
   // fonts
   --font-base: "Cabin", sans-serif;
   --font-square: "NoCurvesBoustrophedon";
   --font-handWritten: "JennaSue";
+  --font-terminal: "Modeseven";
   --basic-text-font-size: clamp(0.6rem, 1.3vw, 1.1rem);
   --section-title-font-size: clamp(1rem, 6vw, 4rem);
 
@@ -46,8 +51,6 @@
   // section - work
   --subtitle-text-font-size: clamp(1rem, 1.7vw, 1.5rem);
   --numbering-text-font-size: clamp(1rem, 2vw, 1.3rem);
-  // section - contact
-  //   --label-font-size: clamp(1rem, )
 }
 
 // BASIC ---------------> ///////
@@ -117,83 +120,3 @@
 .squared-text {
   font-family: var(--font-square);
 }
-
-// /* GRADIENT LINK */
-
-// .gradient-link {
-//   display: table;
-//   text-decoration: none;
-//   box-shadow: 7px 4px 20px 1px rgba(0, 0, 0, 0.15);
-//   padding: 0.8em 1.6em;
-//   cursor: pointer;
-//   margin: 1.2vw 0px;
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   position: relative;
-//   overflow: hidden;
-// }
-
-// .gradient-link-text-base {
-//   font-weight: 900;
-//   text-transform: uppercase;
-//   letter-spacing: 0.2rem;
-//   font-size: clamp(0.3rem, 2.5vw, 1.5rem);
-//   text-align: center;
-//   width: 100%;
-// }
-
-// .gradient-link > span:first-child {
-//   @extend .gradient-text-secondary;
-//   @extend .gradient-link-text-base;
-//   opacity: 1;
-//   position: absolute;
-// }
-
-// .gradient-link > span:nth-child(2) {
-//   color: var(--gray-color);
-//   font-weight: lighter;
-//   @extend .gradient-link-text-base;
-//   opacity: 0;
-//   position: relative;
-// }
-
-// .gradient-link > div {
-//   border: var(--basic-border);
-//   z-index: -1;
-//   width: 100%;
-//   height: 100%;
-//   position: absolute;
-//   transition: all 250ms ease-in-out;
-// }
-
-// .gradient-link > span {
-//   transition: opacity 300ms ease-in-out;
-// }
-// .gradient-link:hover > span:nth-child(1) {
-//   opacity: 0;
-// }
-// .gradient-link:hover > span:nth-child(2) {
-//   opacity: 1;
-// }
-// .gradient-link:hover > div {
-//   border: 0.3vw var(--gray-color) solid;
-//   border-image-source: linear-gradient(
-//     to left,
-//     var(--primary-gradLight-color),
-//     var(--primary-gradDark-color)
-//   );
-//   border-image-slice: 1;
-// }
-
-// /////// gradient touch ///////
-
-// .gradient-border {
-//   border: 0.3vw var(--gray-color) solid;
-//   border-image-source: linear-gradient(
-//     to left,
-//     var(--primary-gradLight-color),
-//     var(--primary-gradDark-color)
-//   );
-//   border-image-slice: 1;
-// }

@@ -3,41 +3,41 @@
   margin: clamp(0.2rem, 1vw, 0.6rem) 0;
 }
 
-.contact-form label {
-  display: block;
-  text-transform: capitalize;
-  font-size: var(--basic-text-font-size);
-  font-family: var(--font-base);
-  margin-top: clamp(0.2rem, 1vw, 0.6rem);
-  margin-bottom: clamp(0.1rem, 0.5vw, 0.3rem);
-  color: var(--gray-color);
+.contact-form div:first-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(0.5rem, 1.8vw, 1.2rem);
 }
 
-.contact-form input[type="text"] {
-  color: var(--lightGray-color) !important;
-  font-weight: bold;
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  //font-weight: 600;
   letter-spacing: 0.2rem;
 }
 
 .contact-form input[type="text"],
+.contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.8rem;
   font-size: var(--basic-text-font-size);
   font-family: var(--font-base);
-  color: var(--black-color);
+  color: var(--lightGray-color);
   background-color: var(--darkGray-color);
   border: none;
-  font-weight: bold;
+  border-right: clamp(0.5rem, 5vw, 2rem) solid var(--gray-color) !important;
   margin: clamp(0.2rem, 1vw, 0.6rem) 0;
+  outline: none;
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-right: clamp(0.5rem, 5vw, 2rem) solid var(--secondary-color) !important;
+  box-shadow: none;
 }
 
 .contact-form textarea {
   height: 50%;
-  resize: vertical;
+  resize: none;
   border: none;
-}
-
-.contain-form .primary-link {
-  border: 2px dashed var(--primary-color);
 }

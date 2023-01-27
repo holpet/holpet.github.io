@@ -42,7 +42,6 @@
 
 .gradient-link > div {
   border: var(--basic-border);
-  z-index: -1;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -59,13 +58,7 @@
   opacity: 1;
 }
 .gradient-link:hover > div {
-  border: 0.3vw var(--gray-color) solid;
-  border-image-source: linear-gradient(
-    to left,
-    var(--primary-gradLight-color),
-    var(--primary-gradDark-color)
-  );
-  border-image-slice: 1;
+  @extend .gradient-border;
 }
 
 /////// gradient touch ///////
@@ -73,8 +66,8 @@
 .gradient-border {
   border: 0.3vw var(--gray-color) solid;
   border-image-source: linear-gradient(
-    to left,
-    var(--primary-gradLight-color),
+    to right,
+    var(--secondary-gradLight-color),
     var(--primary-gradDark-color)
   );
   border-image-slice: 1;

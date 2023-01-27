@@ -13,8 +13,6 @@ const HomePage = () => {
           <div className="wrapper">
             {/* Background img */}
             <div className="img-wrapper">
-              <hr />
-              <hr />
               <img />
             </div>
             {/* Text */}
@@ -34,7 +32,7 @@ const HomePage = () => {
               </p>
               <p className="profession">Web developer.</p>
               <p className="role">Full Stack || Code and learn</p>
-              <PrimaryLink text="contact" type="home" />
+              <PrimaryLink text="contact" type="contact" />
               <p className="code end">&lt;/Home&gt;</p>
             </div>
           </div>

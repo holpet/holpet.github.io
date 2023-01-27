@@ -8,16 +8,20 @@
   column-gap: 4rem;
   width: 100%;
   margin: 2vw 0;
+  padding: 2vw 0;
   border-top: var(--basic-border);
   border-bottom: var(--basic-border);
+  align-items: center;
+  justify-content: center;
 }
 
 .contact .grid-item {
   align-self: center;
-  height: 100%;
+  height: min-content !important;
 }
 
 .contact .grid-item img {
   width: 100%;
   height: auto;
+  max-height: 40vh;
 }
