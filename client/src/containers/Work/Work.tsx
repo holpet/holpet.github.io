@@ -169,14 +169,6 @@ const Work = () => {
           <div className="grid-item">
             <div></div>
           </div>
-          {/* Fifth row */}
-          <div className="grid-item">
-            <div></div>
-          </div>
-          <div className="grid-item">
-            <div></div>
-            <div>SIIIICK</div>
-          </div>
         </div>
       </SectionWrapper>
     </div>
