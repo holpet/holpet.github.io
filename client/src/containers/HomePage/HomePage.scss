@@ -92,7 +92,7 @@
 }
 
 .home .role {
-  font-size: clamp(0.7rem, 2.8vw, 1.7rem);
+  font-size: clamp(0.7rem, 2.6vw, 1.5rem);
   color: var(--gray-color);
   @include bounce-in("900ms");
 }

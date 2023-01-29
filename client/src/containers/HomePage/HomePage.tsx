@@ -31,7 +31,7 @@ const HomePage = () => {
                 .
               </p>
               <p className="profession">Web developer.</p>
-              <p className="role">Full Stack || Code and learn</p>
+              <p className="role">Petra Holavová || Project Portfolio</p>
               <PrimaryLink text="contact" elemType="button" />
               <p className="code end">&lt;/Home&gt;</p>
             </div>
