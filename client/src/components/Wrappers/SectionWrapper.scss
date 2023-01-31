@@ -5,7 +5,7 @@
 .work,
 .contact {
   @extend .basic-wrap;
-  background-color: var(--lighterBlack-color);
+  background-color: var(--bg-content-color);
   padding: var(--padding-val);
 }
 

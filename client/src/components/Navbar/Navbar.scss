@@ -9,7 +9,7 @@
   z-index: 5;
   text-align: center;
   font-size: large;
-  background-color: var(--black-color);
+  background-color: var(--bg-navig-color);
 }
 
 @media (max-width: 1300px) {
@@ -45,7 +45,7 @@
   display: none;
   font-size: 3rem;
   * {
-    color: var(--white-color);
+    color: var(--base-font-color);
   }
   position: absolute;
   right: var(--padding-val);
@@ -69,7 +69,7 @@
 
 .logo-section,
 .logo-section > a {
-  color: var(--white-color);
+  color: var(--base-font-color);
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -87,7 +87,7 @@
   position: relative;
   font-family: var(--font-handWritten);
   font-size: 2rem;
-  color: var(--gray-color);
+  color: var(--border-color);
 }
 
 /** NAVIGATION LINKS **/

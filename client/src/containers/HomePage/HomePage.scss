@@ -93,7 +93,7 @@
 
 .home .role {
   font-size: clamp(0.7rem, 2.6vw, 1.5rem);
-  color: var(--gray-color);
+  color: var(--border-color);
   @include bounce-in("900ms");
 }
 
@@ -103,7 +103,7 @@
   display: inline-block;
   //vertical-align: sub;
   transform: rotate(0deg);
-  border-bottom: 0px dashed var(--gray-color);
+  border-bottom: 0px dashed var(--border-color);
   transition: transform 250ms ease-in-out;
 }
 .home .name > span:nth-child(even) {

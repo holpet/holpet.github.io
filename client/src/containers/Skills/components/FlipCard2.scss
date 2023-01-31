@@ -35,7 +35,7 @@
   text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 8px;
 }
 .card__face--back {
-  background: var(--gray-color);
+  background: var(--border-color);
   transform: rotateY(180deg);
 }
 
@@ -98,7 +98,7 @@
 }
 
 .card-text-container > div {
-  color: var(--white-color);
+  color: var(--base-font-color);
   text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 8px;
   padding: 5px 0;
 }
@@ -134,7 +134,7 @@
 }
 .skill-underline {
   background: transparent;
-  box-shadow: var(--black-color) 2px 1px 15px;
+  box-shadow: var(--bg-navig-color) 2px 1px 15px;
 }
 #skill-js,
 #skill-python {
@@ -159,7 +159,7 @@
 }
 .card-text-container .skill-para {
   color: var(--primary-color);
-  text-shadow: var(--black-color) 3px 2px 5px;
+  text-shadow: var(--bg-navig-color) 3px 2px 5px;
   text-align: left;
 }
 .card-text-container p {

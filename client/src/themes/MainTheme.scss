@@ -27,31 +27,12 @@
   --secondary-gradLight-color: #bf96e3;
 
   // TODO: dark / light versions
-  --white-color: #fbfeff;
-  --black-color: #161616;
-  --lighterBlack-color: #1d1d1d;
-  --gray-color: #797979;
-  --darkGray-color: #3a3a3a;
-  --lightGray-color: #cecece;
-
-  $themes: (
-    dark: (
-      --base-font-color: #fbfeff,
-      --bg-navig-color: #161616,
-      --bg-content-color: #1d1d1d,
-      --border-color: #797979,
-      --skill-shading-color: #3a3a3a,
-      --contact-font-color: #cecece,
-    ),
-    light: (
-      --base-font-color: #000000,
-      --bg-navig-color: #e4e4e4,
-      --bg-content-color: #f0f0f0,
-      --border-color: #797979,
-      --skill-shading-color: #a5a5a5,
-      --contact-font-color: #1d1d1d,
-    ),
-  );
+  --base-font-color: #fbfeff;
+  --bg-navig-color: #161616;
+  --bg-content-color: #1d1d1d;
+  --border-color: #797979;
+  --skill-shading-color: #3a3a3a;
+  --contact-font-color: #cecece;
 
   // fonts
   --font-base: "Cabin", sans-serif;
@@ -63,7 +44,7 @@
 
   // misc
   --padding-val: clamp(20px, 3.5vw, 55px);
-  --basic-border: 2px dashed var(--gray-color);
+  --basic-border: 2px dashed var(--border-color);
 
   // section - skill
   --card-basic-font-size: clamp(0.6rem, 1.3vw, 1.3rem);
@@ -71,6 +52,27 @@
   --subtitle-text-font-size: clamp(1rem, 1.7vw, 1.5rem);
   --numbering-text-font-size: clamp(1rem, 2vw, 1.3rem);
 }
+
+$themes: (
+  dark: (
+    --base-font-color: #fbfeff,
+    --bg-navig-color: #161616,
+    --bg-content-color: #1d1d1d,
+    --border-color: #797979,
+    --skill-shading-color: #3a3a3a,
+    --contact-font-color: #cecece,
+  ),
+  light: (
+    --base-font-color: #000000,
+    --bg-navig-color: #e4e4e4,
+    --bg-content-color: #f0f0f0,
+    --border-color: #797979,
+    --skill-shading-color: #a5a5a5,
+    --contact-font-color: #1d1d1d,
+  ),
+);
+
+$theme: $themes[dark];
 
 // BASIC ---------------> ///////
 
@@ -91,7 +93,7 @@
 .code {
   font-family: var(--font-handWritten);
   font-size: clamp(0.8rem, 3vw, 2rem);
-  color: var(--gray-color);
+  color: var(--border-color);
   text-transform: capitalize;
 }
 

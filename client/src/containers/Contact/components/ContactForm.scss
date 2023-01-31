@@ -22,11 +22,11 @@
   padding: 0.8rem;
   font-size: var(--basic-text-font-size);
   font-family: var(--font-base);
-  color: var(--lightGray-color);
+  color: var(--contact-font-color);
   background-color: var(--lightBlack-color);
   border: none;
-  //border-right: clamp(0.5rem, 5vw, 2rem) solid var(--gray-color) !important;
-  border-bottom: 2px dashed var(--gray-color) !important;
+  //border-right: clamp(0.5rem, 5vw, 2rem) solid var(--border-color) !important;
+  border-bottom: 2px dashed var(--border-color) !important;
   margin: clamp(0.2rem, 1vw, 0.6rem) 0;
   outline: none;
 }

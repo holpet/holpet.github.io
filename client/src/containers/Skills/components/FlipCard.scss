@@ -50,7 +50,6 @@
 
 //skill line
 .card-text-container > div {
-  color: var(--white-color);
   padding: 5px 0;
 }
 
@@ -86,7 +85,7 @@
 }
 .skill-underline {
   background: transparent;
-  box-shadow: var(--darkGray-color) 1px 1px 7px;
+  box-shadow: var(--skill-shading-color) 1px 1px 7px;
 }
 #skill-js,
 #skill-python {

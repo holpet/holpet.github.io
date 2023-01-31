@@ -37,7 +37,7 @@
 }
 
 .gradient-link > span:nth-child(2) {
-  color: var(--gray-color);
+  color: var(--border-color);
   font-weight: bold;
   @extend .gradient-link-text-base;
   opacity: 0;
@@ -68,7 +68,7 @@
 /////// gradient touch ///////
 
 .gradient-border {
-  border: 0.3vw var(--gray-color) solid;
+  border: 0.3vw var(--border-color) solid;
   border-image-source: linear-gradient(
     to right,
     var(--secondary-gradLight-color),
