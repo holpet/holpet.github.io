@@ -26,6 +26,8 @@
   --secondary-gradDark-color: #b457b3;
   --secondary-gradLight-color: #bf96e3;
 
+  $theme: $themes[dark];
+
   // TODO: dark / light versions
   --base-font-color: #fbfeff;
   --bg-navig-color: #161616;
@@ -53,26 +55,32 @@
   --numbering-text-font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
+@function getThemeColor($keyProp) {
+  $val: map-get(
+    $map: $theme,
+    $key: $keyProp,
+  );
+  @return $val;
+}
+
 $themes: (
   dark: (
-    --base-font-color: #fbfeff,
-    --bg-navig-color: #161616,
-    --bg-content-color: #1d1d1d,
-    --border-color: #797979,
-    --skill-shading-color: #3a3a3a,
-    --contact-font-color: #cecece,
+    fontBase: #fbfeff,
+    bgNavig: #161616,
+    bgContent: #1d1d1d,
+    border: #797979,
+    skillShade: #3a3a3a,
+    fontContact: #cecece,
   ),
   light: (
-    --base-font-color: #000000,
-    --bg-navig-color: #e4e4e4,
-    --bg-content-color: #f0f0f0,
-    --border-color: #797979,
-    --skill-shading-color: #a5a5a5,
-    --contact-font-color: #1d1d1d,
+    fontBase: #000000,
+    bgNavig: #e4e4e4,
+    bgContent: #f0f0f0,
+    border: #797979,
+    skillShade: #a5a5a5,
+    fontContact: #1d1d1d,
   ),
 );
-
-$theme: $themes[dark];
 
 // BASIC ---------------> ///////
 
