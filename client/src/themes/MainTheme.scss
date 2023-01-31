@@ -34,6 +34,25 @@
   --darkGray-color: #3a3a3a;
   --lightGray-color: #cecece;
 
+  $themes: (
+    dark: (
+      --base-font-color: #fbfeff,
+      --bg-navig-color: #161616,
+      --bg-content-color: #1d1d1d,
+      --border-color: #797979,
+      --skill-shading-color: #3a3a3a,
+      --contact-font-color: #cecece,
+    ),
+    light: (
+      --base-font-color: #000000,
+      --bg-navig-color: #e4e4e4,
+      --bg-content-color: #f0f0f0,
+      --border-color: #797979,
+      --skill-shading-color: #a5a5a5,
+      --contact-font-color: #1d1d1d,
+    ),
+  );
+
   // fonts
   --font-base: "Cabin", sans-serif;
   --font-square: "NoCurvesBoustrophedon";
