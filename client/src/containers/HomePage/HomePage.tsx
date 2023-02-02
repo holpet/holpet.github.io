@@ -3,7 +3,7 @@ import { AiOutlineArrowDown as Arrow } from "react-icons/ai";
 import PrimaryLink from "../../components/Links/PrimaryLink";
 
 const HomePage = () => {
-  const name = "Petra";
+  const name = "P";
   const nameArray = name.split("");
 
   return (
@@ -23,12 +23,13 @@ const HomePage = () => {
                 I'm{" "}
                 {nameArray.map((el, i) => {
                   return (
-                    <span key={i} className="squared-text">
+                    // className="squared-text"
+                    <span key={i} className="">
                       {el}
                     </span>
                   );
                 })}
-                .
+                <b>etra</b>.
               </p>
               <p className="profession">Web developer.</p>
               <p className="role">Petra Holavová || Project Portfolio</p>

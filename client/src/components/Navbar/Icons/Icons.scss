@@ -1,0 +1,106 @@
+/** ICONS SECTION **/
+.icons-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 35%;
+  padding: clamp(20px, 5vw, 40px) 0;
+}
+
+.social-icons,
+.flag-icons,
+.theme-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 5vh;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(10px, 2vw, 20px) 0;
+}
+
+#cz,
+#uk {
+  max-width: 3rem;
+  width: 20%;
+  height: auto;
+  padding-bottom: 8px;
+  transform: scale(1);
+  transition: all 100ms ease-in-out;
+}
+#cz:hover,
+#uk:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  opacity: 1;
+}
+.flag-icons > img:not(.active) {
+  opacity: 0.3;
+}
+.flag-icons > img.active {
+  opacity: 1;
+}
+
+#sun,
+#moon {
+  max-width: 2.6rem;
+  width: 80%;
+  height: auto;
+  transform: scale(1);
+  padding: 2px;
+  font-size: 2.7rem;
+  * {
+    color: var(--secondary-color);
+  }
+  transition: all 100ms ease-in-out;
+}
+#sun:hover,
+#moon:hover {
+  transform: scale(1.1);
+  * {
+    color: var(--primary-color);
+  }
+}
+.theme-icons a {
+  transition: all 100ms ease-in-out;
+}
+.theme-icons a:hover {
+  opacity: 1 !important;
+}
+.theme-icons a:not(.active) {
+  opacity: 0.5;
+}
+.theme-icons a.active {
+  opacity: 1;
+}
+
+#github,
+#cv {
+  max-width: 3rem;
+  width: 90%;
+  height: auto;
+  transform: scale(1);
+  padding: 2px;
+  font-size: 2.7rem;
+  * {
+    color: var(--primary-color);
+  }
+  transition: all 100ms ease-in-out;
+}
+
+#github:hover,
+#cv:hover {
+  transform: scale(1.1);
+  * {
+    color: var(--secondary-color);
+  }
+}
+
+#cv path {
+  stroke: var(--primary-color);
+}
+#cv:hover path {
+  stroke: var(--secondary-color);
+}

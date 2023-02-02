@@ -90,6 +90,15 @@
   font-weight: bolder;
   @include bounce-in("700ms");
 }
+.home .name > span {
+  @extend .gradient-base;
+  @include gradText(120deg, 30%, 60%);
+}
+.home .name > b {
+  color: var(--border-color);
+  text-transform: lowercase !important;
+  display: inline-block;
+}
 
 .home .role {
   font-size: clamp(0.7rem, 2.6vw, 1.5rem);
@@ -100,10 +109,11 @@
 // ***** special name "PETRA" ***** //
 .home .name > span {
   @extend .gradient-base;
+  @include gradText(120deg, 30%, 60%);
   display: inline-block;
   //vertical-align: sub;
   transform: rotate(0deg);
-  border-bottom: 0px dashed var(--border-color);
+  //border-bottom: 0px dashed var(--border-color);
   transition: transform 250ms ease-in-out;
 }
 .home .name > span:nth-child(even) {
@@ -114,11 +124,11 @@
 }
 .home .name > span:nth-child(even):hover {
   transform: rotate(7deg);
-  border-bottom: var(--basic-border);
+  //border-bottom: var(--basic-border);
 }
 .home .name > span:nth-child(odd):hover {
   transform: rotate(-7deg);
-  border-bottom: var(--basic-border);
+  //border-bottom: var(--basic-border);
 }
 
 /* ANIMATION gfx */

@@ -26,6 +26,20 @@
         display: none;
       }
     </style>
+    <script defer>
+      const theme = localStorage.getItem("color-theme");
+      if (theme) {
+        document
+          .querySelector("body")
+          .setAttribute(
+            "background-color",
+            theme === "light" ? "white" : "#1d1d1d"
+          );
+        document
+          .querySelector("body")
+          .setAttribute("color", theme === "light" ? "#1d1d1d" : "white");
+      }
+    </script>
     <title>HolPet Portfolio</title>
   </head>
   <body>

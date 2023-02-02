@@ -26,15 +26,29 @@
   --secondary-gradDark-color: #b457b3;
   --secondary-gradLight-color: #bf96e3;
 
-  $theme: $themes[dark];
+  // dark theme
+  --dark-font-base: #fbfeff;
+  --dark-bg-navig: #161616;
+  --dark-bg-content: #1d1d1d;
+  --dark-border: #797979;
+  --dark-skill-shade: #3a3a3a;
+  --dark-font-contact: #cecece;
 
-  // TODO: dark / light versions
-  --base-font-color: #fbfeff;
-  --bg-navig-color: #161616;
-  --bg-content-color: #1d1d1d;
-  --border-color: #797979;
-  --skill-shading-color: #3a3a3a;
-  --contact-font-color: #cecece;
+  // light theme
+  --light-font-base: #161616;
+  --light-bg-navig: #e4e4e4;
+  --light-bg-content: #e4e4e4;
+  --light-border: #8a8a8a;
+  --light-skill-shade: #a5a5a5;
+  --light-font-contact: #1d1d1d;
+
+  // dynamically changed values
+  --base-font-color: var(--dark-font-base);
+  --bg-navig-color: var(--bg-navig-color);
+  --bg-content-color: var(--dark-bg-content);
+  --border-color: var(--dark-border);
+  --skill-shading-color: var(--dark-skill-shade);
+  --contact-font-color: var(--dark-font-contact);
 
   // fonts
   --font-base: "Cabin", sans-serif;
@@ -54,33 +68,6 @@
   --subtitle-text-font-size: clamp(1rem, 1.7vw, 1.5rem);
   --numbering-text-font-size: clamp(1rem, 2vw, 1.3rem);
 }
-
-@function getThemeColor($keyProp) {
-  $val: map-get(
-    $map: $theme,
-    $key: $keyProp,
-  );
-  @return $val;
-}
-
-$themes: (
-  dark: (
-    fontBase: #fbfeff,
-    bgNavig: #161616,
-    bgContent: #1d1d1d,
-    border: #797979,
-    skillShade: #3a3a3a,
-    fontContact: #cecece,
-  ),
-  light: (
-    fontBase: #000000,
-    bgNavig: #e4e4e4,
-    bgContent: #f0f0f0,
-    border: #797979,
-    skillShade: #a5a5a5,
-    fontContact: #1d1d1d,
-  ),
-);
 
 // BASIC ---------------> ///////
 
