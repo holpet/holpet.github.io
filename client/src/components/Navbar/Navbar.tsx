@@ -4,9 +4,11 @@ import "./Navbar.scss";
 import { AiFillCloseCircle as Close } from "react-icons/ai";
 import Logo from "./Logo/Logo";
 import Icons from "./Icons/Icons";
+import styled, { useTheme } from "styled-components";
 
 const Navbar = () => {
   const [isClosed, setIsClosed] = useAtom(closed);
+  const theme = useTheme();
 
   return (
     <aside className={`navbar ${!isClosed && "show"}`}>

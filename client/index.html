@@ -10,8 +10,8 @@
     <script defer src="/scripts/tagcanvas.min.js"></script>
     <style media="screen" type="text/css">
       body {
-        background-color: #1d1d1d;
-        color: white;
+        /* background-color: #1d1d1d; */
+        /* color: white; */
         overflow-x: hidden;
       }
       #loader-container {
@@ -26,23 +26,17 @@
         display: none;
       }
     </style>
-    <script defer>
-      const theme = localStorage.getItem("color-theme");
-      if (theme) {
-        document
-          .querySelector("body")
-          .setAttribute(
-            "background-color",
-            theme === "light" ? "white" : "#1d1d1d"
-          );
-        document
-          .querySelector("body")
-          .setAttribute("color", theme === "light" ? "#1d1d1d" : "white");
-      }
-    </script>
     <title>HolPet Portfolio</title>
   </head>
   <body>
+    <script>
+      const theme = window.localStorage.getItem("dark-theme");
+      if (theme) {
+        const body = window.document.getElementsByTagName("body")[0];
+        body.style.backgroundColor = JSON.parse(theme) ? "#1d1d1d" : "#e4e4e4";
+        body.style.color = JSON.parse(theme) ? "#fbfeff" : "#575757";
+      }
+    </script>
     <svg
       id="svg"
       width="100%"
