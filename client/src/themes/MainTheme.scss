@@ -43,12 +43,12 @@
   --light-font-contact: #313131;
 
   // dynamically changed values
-  --base-font-color: ;
-  --bg-navig-color: ;
-  --bg-content-color: ;
-  --border-color: ;
-  --skill-shading-color: ;
-  --contact-font-color: ;
+  --base-font-color: var(--dark-font-base);
+  --bg-navig-color: var(--bg-navig-color);
+  --bg-content-color: var(--dark-bg-content);
+  --border-color: var(--dark-border);
+  --skill-shading-color: var(--dark-skill-shade);
+  --contact-font-color: var(--dark-font-contact);
 
   // fonts
   --font-base: "Cabin", sans-serif;

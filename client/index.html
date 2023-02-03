@@ -10,8 +10,6 @@
     <script defer src="/scripts/tagcanvas.min.js"></script>
     <style media="screen" type="text/css">
       body {
-        /* background-color: #1d1d1d; */
-        /* color: white; */
         overflow-x: hidden;
       }
       #loader-container {
@@ -30,11 +28,17 @@
   </head>
   <body>
     <script>
-      const theme = window.localStorage.getItem("dark-theme");
+      // get stored color theme
+      const theme = window.localStorage.getItem("theme");
+      const body = window.document.getElementsByTagName("body")[0];
       if (theme) {
-        const body = window.document.getElementsByTagName("body")[0];
-        body.style.backgroundColor = JSON.parse(theme) ? "#1d1d1d" : "#e4e4e4";
-        body.style.color = JSON.parse(theme) ? "#fbfeff" : "#575757";
+        body.style.backgroundColor = theme === "dark" ? "#1d1d1d" : "#e4e4e4";
+        body.style.color = theme === "dark" ? "#fbfeff" : "#575757";
+      }
+      // or get default color theme
+      else {
+        body.style.backgroundColor = "#1d1d1d";
+        body.style.color = "#fbfeff";
       }
     </script>
     <svg

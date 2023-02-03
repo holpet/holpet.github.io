@@ -74,12 +74,14 @@
   flex-direction: column;
   text-decoration: none;
   overflow-x: visible;
+  font-weight: 600;
 }
 
 // logo text
 .logo-section > a > span {
   font-size: x-large;
   position: relative;
+  letter-spacing: 0.1rem;
 }
 .logo-section > span {
   //font-size: small;

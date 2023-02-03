@@ -26,35 +26,29 @@ const themeColors = {
     skillShade: "#a5a5a5",
     fontContact: "#1d1d1d",
     strokeInner: "#f0f0f0",
-    strokeOuter: "#ddd2db",
+    strokeOuter: "#bf96e3",
   },
 };
 
 export default function handleThemeSwap() {
   // get theme from local storage, or default to dark if not found
-  const theme = window.localStorage.getItem("dark-theme");
-  let chosenTheme = true;
-  if (theme) {
-    if (!JSON.parse(theme)) chosenTheme = false;
-  }
+  const theme = window.localStorage.getItem("theme") || "dark";
 
   // change theme of body elements accordingly
   rootProps.forEach((prop) => {
     document.documentElement.style.setProperty(
       prop[0],
       //@ts-ignore
-      chosenTheme ? themeColors.dark[prop[1]] : themeColors.light[prop[1]]
+      theme === "dark" ? themeColors.dark[prop[1]] : themeColors.light[prop[1]]
     );
   });
 
   // body change
   const body = window.document.getElementsByTagName("body")[0];
-  body.style.backgroundColor = chosenTheme
-    ? themeColors.dark.bgContent
-    : themeColors.light.bgContent;
-  body.style.color = chosenTheme
-    ? themeColors.dark.fontBase
-    : themeColors.light.fontBase;
+  body.style.backgroundColor =
+    theme === "dark" ? themeColors.dark.bgContent : themeColors.light.bgContent;
+  body.style.color =
+    theme === "dark" ? themeColors.dark.fontBase : themeColors.light.fontBase;
 
   // change svg mouse trailing gfx
   const svgPath1 = document.querySelector("#path");
@@ -62,10 +56,14 @@ export default function handleThemeSwap() {
   if (svgPath1 === null || svgPath2 === null) return;
   svgPath1.setAttribute(
     "stroke",
-    chosenTheme ? themeColors.dark.strokeOuter : themeColors.light.strokeOuter
+    theme === "dark"
+      ? themeColors.dark.strokeOuter
+      : themeColors.light.strokeOuter
   );
   svgPath2.setAttribute(
     "stroke",
-    chosenTheme ? themeColors.dark.strokeInner : themeColors.light.strokeInner
+    theme === "dark"
+      ? themeColors.dark.strokeInner
+      : themeColors.light.strokeInner
   );
 }
