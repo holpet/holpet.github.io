@@ -1,7 +1,7 @@
 export default {
   en: {
-    code: "Skills",
-    title: "What can I do...",
+    code: "Work",
+    title: "What I've done...",
     p1: "used in projects:",
     p2: "This portfolio website was created with React.",
     text1:
@@ -10,8 +10,8 @@ export default {
       "Since web dev and the IT industry in general progresses exponentially fast nowadays, leaving us with so many technologies to utilize, it was important to me to choose a technology that's proven and reliable, and to gain a solid basis of understanding, together with prerequisites, to be able to build a full stack application that not only works, but is optimized as well.",
   },
   cz: {
-    code: "Dovednosti",
-    title: "Co mohu nabídnout...",
+    code: "Práce",
+    title: "Co jsem vytvořila...",
     p1: "použito v projektech:",
     p2: "Toto webové portfolio bylo vytvořeno pomocí Reactu.",
     text1:

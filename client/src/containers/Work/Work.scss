@@ -79,6 +79,7 @@
   position: absolute;
   text-shadow: rgba(0, 0, 0, 1) 1px 1px 8px;
   font-size: var(--numbering-text-font-size);
+  color: var(--dark-font-base);
 }
 .work .grid-item:nth-child(4n + 1) .grid-title {
   left: calc(37.5%);
@@ -208,6 +209,7 @@
   font-size: var(--subtitle-text-font-size);
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  font-weight: bolder;
 }
 .work .grid-item:nth-child(4n + 2) .grid-description p:first-child {
   color: var(--primary-color);
