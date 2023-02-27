@@ -2,20 +2,29 @@ import "./Skills.scss";
 import TagSphere from "./components/TagSphere";
 import FlipCard from "./components/FlipCard";
 import SectionWrapper from "../../components/Wrappers/SectionWrapper";
+import { atomLang } from "../../lib/atoms/Atoms";
+import { useAtom } from "jotai";
+import skills from "../../lib/data/Skills";
 
 const Skills = () => {
+  const [activeLang] = useAtom(atomLang);
+
   return (
     <div id="skills-section">
-      <SectionWrapper section="skills" char="学" title="What can I do...">
+      <SectionWrapper
+        section={skills[activeLang].code}
+        char="学"
+        title={skills[activeLang].title}
+      >
         <div className="grid">
           <div className="grid-item">
-            <FlipCard text="HELLO" card="left" key={"left-skill"} />
+            <FlipCard card="left" />
           </div>
           <div className="grid-item">
             <TagSphere />
           </div>
           <div className="grid-item">
-            <FlipCard text="WORLD" card="right" key={"right-skill"} />
+            <FlipCard card="right" />
           </div>
         </div>
       </SectionWrapper>
