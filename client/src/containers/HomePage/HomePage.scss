@@ -34,7 +34,7 @@
 
 // bunny image
 .home .wrapper > div:first-child > img {
-  content: url("./../../assets/bunnyTitle6.svg");
+  content: url("./../../assets/bunnybg.svg");
   width: clamp(10rem, 48vw, 48vw);
   height: auto;
   position: absolute;
@@ -63,7 +63,6 @@
 .home .text-wrapper {
   position: relative;
   white-space: nowrap;
-  text-transform: capitalize;
 }
 
 .home .code {

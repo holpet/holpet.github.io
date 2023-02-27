@@ -1,10 +1,14 @@
 import "./HomePage.scss";
 import { AiOutlineArrowDown as Arrow } from "react-icons/ai";
 import PrimaryLink from "../../components/Links/PrimaryLink";
+import home from "../../lib/data/Home";
+import { atomLang } from "../../lib/atoms/Atoms";
+import { useAtom } from "jotai";
 
 const HomePage = () => {
   const name = "P";
   const nameArray = name.split("");
+  const [activeLang] = useAtom(atomLang);
 
   return (
     <>
@@ -17,10 +21,10 @@ const HomePage = () => {
             </div>
             {/* Text */}
             <div className="text-wrapper bounce">
-              <p className="code">&lt;Home&gt;</p>
-              <p className="greeting">Hello,</p>
+              <p className="code">&lt;{home[activeLang].code}&gt;</p>
+              <p className="greeting">{home[activeLang].title1}</p>
               <p className="name">
-                I'm{" "}
+                {home[activeLang].title2}{" "}
                 {nameArray.map((el, i) => {
                   return (
                     // className="squared-text"
@@ -31,10 +35,10 @@ const HomePage = () => {
                 })}
                 <b>etra</b>.
               </p>
-              <p className="profession">Web developer.</p>
-              <p className="role">Petra Holavová || Project Portfolio</p>
-              <PrimaryLink text="contact" elemType="button" />
-              <p className="code end">&lt;/Home&gt;</p>
+              <p className="profession">{home[activeLang].title3}</p>
+              <p className="role">{home[activeLang].subtitle}</p>
+              <PrimaryLink text={home[activeLang].link} elemType="button" />
+              <p className="code end">&lt;/{home[activeLang].code}&gt;</p>
             </div>
           </div>
         </div>
