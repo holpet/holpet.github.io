@@ -1,4 +1,8 @@
-export default {
+interface menuProps {
+  [key: string]: { [key: string]: string };
+}
+
+const menu: menuProps = {
   en: {
     link1: "About",
     link2: "Skills",
@@ -12,3 +16,5 @@ export default {
     link4: "Kontakt",
   },
 };
+
+export default menu;

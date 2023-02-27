@@ -1,12 +1,17 @@
 import { useAtom } from "jotai";
-import { atomIsClosed as closed } from "../../lib/atoms/Atoms";
+import {
+  atomIsClosed as closed,
+  atomLang as lang,
+} from "../../lib/atoms/Atoms";
 import "./Navbar.scss";
 import { AiFillCloseCircle as Close } from "react-icons/ai";
 import Logo from "./Logo/Logo";
 import Icons from "./Icons/Icons";
+import text from "../../lib/data/Menu";
 
 const Navbar = () => {
   const [isClosed, setIsClosed] = useAtom(closed);
+  const [activeLang] = useAtom(lang);
 
   return (
     <aside className={`navbar ${!isClosed && "show"}`}>
@@ -29,22 +34,22 @@ const Navbar = () => {
         <nav className="nav-links">
           <div>
             <a href="#about-section" onClick={() => setIsClosed(true)}>
-              About
+              {text[activeLang].link1}
             </a>
           </div>
           <div>
             <a href="#skills-section" onClick={() => setIsClosed(true)}>
-              Skills
+              {text[activeLang].link2}
             </a>
           </div>
           <div>
             <a href="#work-section" onClick={() => setIsClosed(true)}>
-              Work
+              {text[activeLang].link3}
             </a>
           </div>
           <div>
             <a href="#contact-section" onClick={() => setIsClosed(true)}>
-              Contact
+              {text[activeLang].link4}
             </a>
           </div>
         </nav>

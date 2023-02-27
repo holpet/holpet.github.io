@@ -1,12 +1,12 @@
 import { useAtom } from "jotai";
-import { atomIsClosed as closed } from "../../../../lib/atoms/Atoms";
-import { useState } from "react";
+import {
+  atomIsClosed as closed,
+  atomLang as lang,
+} from "../../../../lib/atoms/Atoms";
 import { cz, uk } from "../../../../assets";
 
 const Flags = () => {
-  const [isFlagActive, setIsFlagActive] = useState(
-    window.localStorage.getItem("lang") || "en"
-  );
+  const [activeLang, setActiveLang] = useAtom(lang);
   const [, setIsClosed] = useAtom(closed);
 
   return (
@@ -14,20 +14,20 @@ const Flags = () => {
       <img
         src={cz}
         id="cz"
-        className={`${isFlagActive === "cz" && "active"}`}
+        className={`${activeLang === "cz" && "active"}`}
         onClick={() => {
           window.localStorage.setItem("lang", "cz");
-          setIsFlagActive("cz");
+          setActiveLang("cz");
           setIsClosed(true);
         }}
       />
       <img
         src={uk}
         id="uk"
-        className={`${isFlagActive === "en" && "active"}`}
+        className={`${activeLang === "en" && "active"}`}
         onClick={() => {
           window.localStorage.setItem("lang", "en");
-          setIsFlagActive("en");
+          setActiveLang("en");
           setIsClosed(true);
         }}
       />

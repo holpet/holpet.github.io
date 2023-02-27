@@ -1,5 +1,5 @@
 import SectionWrapper from "../../components/Wrappers/SectionWrapper";
-import { about } from "../../lib/data";
+import about from "../../lib/data/About";
 
 import "./About.scss";
 
