@@ -9,36 +9,54 @@
   column-gap: clamp(0.5rem, 1.8vw, 1.2rem);
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"] {
-  //font-weight: 600;
+.contact-form input:autofill,
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form input:-webkit-autofill:active,
+.contact-form input:-internal-autofill-previewed,
+.contact-form input:-internal-autofill-selected {
+  box-shadow: 0 0px 0px 50px var(--bg-content-color) inset !important;
+  -webkit-text-fill-color: var(--contact-font-color) !important;
+  background-color: var(--bg-content-color) !important;
+  color: var(--contact-font-color) !important;
+}
+
+.contact-form input {
   letter-spacing: 0.2rem;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
+.contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.8rem;
   font-size: var(--basic-text-font-size);
   font-family: var(--font-base);
   color: var(--contact-font-color);
-  background-color: var(--lightBlack-color);
+  background-color: var(--bg-content-color) !important;
   border: none;
   //border-right: clamp(0.5rem, 5vw, 2rem) solid var(--border-color) !important;
   border-bottom: 2px dashed var(--border-color) !important;
   margin: clamp(0.2rem, 1vw, 0.6rem) 0;
   outline: none;
 }
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
+.contact-form input:focus,
 .contact-form textarea:focus {
   //border-right: clamp(0.5rem, 5vw, 2rem) solid var(--secondary-color) !important;
   box-shadow: none;
+}
+
+.contact-form input:not(:focus).error,
+.contact-form textarea:not(:focus).error {
+  border-bottom: 2px dashed rgb(197, 0, 0) !important;
 }
 
 .contact-form textarea {
   height: 50%;
   resize: none;
   border: none;
+}
+
+.contact-form .hide {
+  display: none;
 }

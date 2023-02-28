@@ -3,10 +3,14 @@ import "./Contact.scss";
 import { paperplane } from "../../assets";
 import SectionWrapper from "../../components/Wrappers/SectionWrapper";
 import ContactForm from "./components/ContactForm";
+import { atomLang } from "../../lib/atoms/Atoms";
+import { useAtom } from "jotai";
+import contact from "../../lib/data/Contact";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [formHeight, setFormHeight] = useState("100px");
+  const [activeLang] = useAtom(atomLang);
 
   useEffect(() => {
     setFormHeight(formRef.current?.clientHeight + "px");
@@ -14,7 +18,11 @@ const Contact = () => {
 
   return (
     <div id="contact-section">
-      <SectionWrapper section="contact" char="会" title="How to reach me...">
+      <SectionWrapper
+        section={contact[activeLang].code}
+        char="会"
+        title={contact[activeLang].title}
+      >
         <div className="grid">
           <div className="grid-item">
             <ContactForm formRef={formRef} />
