@@ -1,7 +1,7 @@
 import { demo1, demo2, demo3, demo4 } from "../../assets/demo";
 
 interface workProps {
-  [key: string]: { [key: string]: string | { [key: string]: string }[] };
+  [key: string]: { [key: string]: any };
 }
 
 const work: workProps = {
@@ -25,7 +25,7 @@ const work: workProps = {
         languages: "Javascript, HTML, CSS",
         frameworks: "Node.js with Express, EJS, MongoDB",
         description:
-          "App with the basic funtionality of a social network site like twitter. Only with cats and therefore much cuter. Users can post messages and images - anonymously or with a registered profile they can customize (icon, bg, description etc.). All messages and pictures are persisted in a database and can be deleted by user. Search functionality allows for fast lookups.",
+          "App with the basic funtionality of a social network site like Twitter. Only with cats and therefore much cuter. Users can post messages and images - anonymously or with a registered profile they can customize (icon, bg, description etc.). All messages, pictures and other data are persisted in a database and can be deleted by user. Search functionality allows for fast lookups.",
         img: demo2,
         github: "https://github.com/holpet/chatbox",
         web: "https://chatbox-app.onrender.com/",
@@ -58,12 +58,52 @@ const work: workProps = {
   cz: {
     code: "work",
     title: "Co jsem vytvořila...",
-    p1: "použito v projektech:",
-    p2: "Toto webové portfolio bylo vytvořeno pomocí Reactu.",
-    text1:
-      "S tím, jak jsem postupně nabírala znalosti a zkušenosti s různými technologiemi a uvědomila si, že mým cílem je podílet se na vytváření komplexnějších projektů s reálnými dopady, se mé zaměření celkem přirozeně stočilo k jednomu z nejpopulárnějších a zároveň nejpoužívanějších webových tech stacků, a sice tzv. MERN (MongoDB, Express, React a Node).",
-    text2:
-      "Ve webovém developmentu, ale i v celém IT odvětví obecně, je dnes jasně vidět trend exponenciálního růstu, díky nemuž neustále vznikají nové a nové technologie. Pro mě bylo proto důležité vybrat si technologii osvědčenou a spolehlivou, a zároveň díky ní získat dobré základy a předpoklady k vytváření plnohodnotných aplikací a jejich optimálnímu fungování.",
+    projects: [
+      {
+        name: "E-commerce Web",
+        languages: "Typescript, Javascript, HTML, CSS",
+        frameworks: "Next.js (React), Tailwind",
+        description:
+          "Funkční vzor webové stránky pro e-shop s oblečením a elektronikou. Aplikace volá server FakeStoreAPI, z něhož získává informace o různém zboží. Všechny vybrané položky jsou uloženy do košíku pomocí react-redux a react-persist. Uživatelé jsou autentikováni pomocí OAuth (next-auth) pro Google a Facebook. Stránka implementuje vyhledávání a filtrování.",
+        img: demo1,
+        github: "https://github.com/holpet/e-comm-clk",
+        web: "https://e-comm-clk.vercel.app/",
+        an: "",
+      },
+      {
+        name: "C(h)atbox Web",
+        languages: "Javascript, HTML, CSS",
+        frameworks: "Node.js with Express, EJS, MongoDB",
+        description:
+          "Appka se základní funkcionalitou sociální sítě jako je Twitter. Tentokrát však se vzorem kočky, a proto o mnoho roztomilejší. Uživatelé mohou posílat zprávy a obrázky - anonymně nebo pod svým registrovaným účtem, přičemž profil lze přizpůsobit (úprava ikon, pozadí, popisu atd.). Všechna data jsou ukládána do databáze a mohou být smazána. Funkce vyhledávání příspěvků.",
+        img: demo2,
+        github: "https://github.com/holpet/chatbox",
+        web: "https://chatbox-app.onrender.com/",
+        an: "kvůli limitu serveru je k načtení dema potřeba až 1 min",
+      },
+      {
+        name: "Keeper App",
+        languages: "Javascript, HTML, CSS",
+        frameworks: "React",
+        description:
+          "Aplikace, která umožňuje uživatelům vytvářet poznámky a připínat je na stránku. Uživatelé mohou editovat, ukládat a mazat všechny lístky (data jsou ukládána do lokální paměti - po obnovení stránky se vrátí do původního stavu). Design implementuje Masonry efekt (poznámky jsou ve sloupcích a vertikálně se k sobě lepí) a Framer-Motion animace při uložení a mazání.",
+        img: demo3,
+        github: "https://github.com/holpet/keeper-app",
+        web: "https://keeper-app-beige.vercel.app/",
+        an: "",
+      },
+      {
+        name: "Pathfinder App",
+        languages: "Javascript, HTML, CSS",
+        frameworks: "React",
+        description:
+          'Tato aplikace demonstruje, jak fungují algoritmy pro hledání nejkratší cesty. Tyto algoritmy jsou v reálu využívány např. v mapách Google Maps, aby určily nejlepší cestu z bodu A do bodu B. Uživatelé mohou pohybovat startovní a konečnou pozicí, kreslit normální i vážené stěny (popř. využít přidaného bludiště a schodů jako překážek) a vybrat si z 5 nejčastěji uplatňovaných algoritmů. Po kliknutí na "START" se rozjede barevná animace vyznačující cestu.',
+        img: demo4,
+        github: "https://github.com/holpet/pathfinder",
+        web: "https://holpet.github.io/pathfinder/",
+        an: "",
+      },
+    ],
   },
 };
 

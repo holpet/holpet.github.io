@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import "./Work.scss";
 import { butterfly } from "../../assets";
-import { demo1, demo2 } from "../../assets/demo";
 import { ImEye as Eye, ImEyeBlocked as EyeBlocked } from "react-icons/im";
 import { FaGithub as Github } from "react-icons/fa";
+import work from "../../lib/data/Work";
 import SectionWrapper from "../../components/Wrappers/SectionWrapper";
+import { atomLang } from "../../lib/atoms/Atoms";
+import { useAtom } from "jotai";
 
 const Work = () => {
   const gridRef = useRef<HTMLDivElement>(null);
   const [lineHeight, setLineHeight] = useState("200px");
+  const [activeLang] = useAtom(atomLang);
 
   function getLineHeight() {
     const vw = window.innerWidth / 100;
@@ -34,7 +37,11 @@ const Work = () => {
 
   return (
     <div id="work-section">
-      <SectionWrapper section="work" char="見" title="What I've done...">
+      <SectionWrapper
+        section={work[activeLang].code}
+        char="見"
+        title={work[activeLang].title}
+      >
         <div
           className="work-icon-container"
           data-aos="fade-up"
@@ -57,13 +64,15 @@ const Work = () => {
             <div className="grid-title">#1</div>
             <div
               className="grid-image"
-              style={{ backgroundImage: `url(${demo1})` }}
+              style={{
+                backgroundImage: `url(${work[activeLang].projects[0].img})`,
+              }}
             ></div>
             <div className="grid-links">
               <div
                 className="grid-github"
                 onClick={() => {
-                  window.open("https://github.com/holpet", "_blank");
+                  window.open(work[activeLang].projects[0].github, "_blank");
                 }}
               >
                 <Github className="gh" />
@@ -71,7 +80,7 @@ const Work = () => {
               <div
                 className="grid-url"
                 onClick={() => {
-                  window.open("https://e-comm-clk.vercel.app/", "_blank");
+                  window.open(work[activeLang].projects[0].web, "_blank");
                 }}
               >
                 <Eye className="eye" />
@@ -82,45 +91,22 @@ const Work = () => {
           <div className="grid-item">
             <div></div> {/* decor div */}
             <div className="grid-description" data-aos="fade-left">
-              <p>E-Commerce web</p>
-              <p>○ TypeScript, JavaScript, HTML, CSS</p>
-              <p>○ Next.js, Tailwind</p>
+              <p>{work[activeLang].projects[0].name}</p>
+              <p>○ {work[activeLang].projects[0].languages}</p>
+              <p>○ {work[activeLang].projects[0].frameworks}</p>
               <br />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
-                faucibus urna. Morbi eu pulvinar metus. Sed a augue quis dolor
-                facilisis iaculis nec et lacus. Mauris ultrices bibendum leo,
-                sed eleifend lorem tristique ut. Sed laoreet magna vitae diam
-                pharetra commodo. Proin urna orci, ultrices sed malesuada nec,
-                rutrum vitae orci. Duis interdum molestie rhoncus. Praesent quis
-                nisl blandit, auctor nulla id, tincidunt quam. Praesent molestie
-                posuere aliquet. Aenean molestie semper massa, a sollicitudin
-                risus viverra sed. Aliquam cursus placerat mauris vitae
-                tristique. Nullam erat risus, posuere eu sollicitudin sed,
-                pharetra rutrum justo. Praesent eu nunc quis enim tempor tempus
-                eget eget sem. Duis sit amet sapien in dolor hendrerit
-                ullamcorper. Aliquam at condimentum urna.
-              </p>
+              <p>{work[activeLang].projects[0].description}</p>
             </div>
           </div>
           {/* Second row */}
           {/* ---------------- Project description -------------------- */}
           <div className="grid-item">
             <div className="grid-description">
-              <p>Chatbox web</p>
-              <p>○ TypeScript, JavaScript, HTML, CSS</p>
-              <p>○ Next.js, Tailwind</p>
+              <p>{work[activeLang].projects[1].name}</p>
+              <p>○ {work[activeLang].projects[1].languages}</p>
+              <p>○ {work[activeLang].projects[1].frameworks}</p>
               <br />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
-                faucibus urna. Morbi eu pulvinar metus. Sed a augue quis dolor
-                facilisis iaculis nec et lacus. Mauris ultrices bibendum leo,
-                sed eleifend lorem tristique ut. Sed laoreet magna vitae diam
-                pharetra commodo. Proin urna orci, ultrices sed malesuada nec,
-                rutrum vitae orci. Duis interdum molestie rhoncus. Praesent quis
-                nisl blandit, auctor nulla id, tincidunt quam. Praesent molestie
-                posuere aliquet.
-              </p>
+              <p>{work[activeLang].projects[1].description}</p>
             </div>
             <div></div> {/* decor div */}
           </div>
@@ -131,7 +117,7 @@ const Work = () => {
               <div
                 className="grid-github"
                 onClick={() => {
-                  window.open("https://github.com/holpet", "_blank");
+                  window.open(work[activeLang].projects[1].github, "_blank");
                 }}
               >
                 <Github className="gh" />
@@ -139,7 +125,7 @@ const Work = () => {
               <div
                 className="grid-url"
                 onClick={() => {
-                  window.open("https://e-comm-clk.vercel.app/", "_blank");
+                  window.open(work[activeLang].projects[1].web, "_blank");
                 }}
               >
                 <Eye className="eye" />
@@ -147,7 +133,10 @@ const Work = () => {
             </div>
             <div
               className="grid-image"
-              style={{ backgroundImage: `url(${demo2})`, zIndex: "1" }}
+              style={{
+                backgroundImage: `url(${work[activeLang].projects[1].img})`,
+                zIndex: "1",
+              }}
             ></div>
           </div>
 
