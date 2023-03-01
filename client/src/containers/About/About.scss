@@ -109,13 +109,10 @@
 // animate text inside borders
 
 .about .grid-item:nth-child(2) > div > div {
-  @include swing("6s", "1s", "1s");
+  @include swing("5s", "1s", "1s");
 }
 .about .grid-item:nth-child(3) > div > div {
-  @include swing("6s", "1s", "3s");
-}
-.about .grid-item:nth-child(6) > div > div {
-  @include swing("6s", "1s", "5s");
+  @include swing("5s", "1s", "3s");
 }
 
 @keyframes waiting {
@@ -183,7 +180,7 @@
 .about .grid-item:nth-child(2) > div:nth-child(1) {
   position: absolute;
   border-bottom: 5px solid var(--primary-color);
-  width: 90%;
+  width: 80%;
   padding: 2px;
   bottom: -2px;
   right: 0;

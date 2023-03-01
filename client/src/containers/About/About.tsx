@@ -51,24 +51,6 @@ const About = () => {
               {about[activeLang]["2-b"]}
             </div>
           </div>
-          {/* ITEM 5 */}
-          <div className="grid-item" data-aos="fade-right">
-            <div>
-              {about[activeLang]["3-a"]}
-              <span className="primary-span">
-                {about[activeLang]["3-phrase"]}
-              </span>
-              {about[activeLang]["3-b"]}
-            </div>
-            <div className="box3"></div>
-          </div>
-          {/* ITEM 6 */}
-          <div className="grid-item">
-            <div></div>
-            <div>
-              <div data-aos="zoom-in">{about[activeLang]["3-phrase"]}</div>
-            </div>
-          </div>
         </div>
       </SectionWrapper>
     </div>

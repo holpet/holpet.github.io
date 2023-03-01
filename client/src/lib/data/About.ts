@@ -7,10 +7,10 @@ const about: aboutProps = {
     code: "about",
     title: "Who Am I...",
     "1-a":
-      "I am a fan of all things functional and beautifully designed. Development of web apps, though, has a special place in my heart. I found my way to programming and web dev in general some years ago during a school lecture, which introduced us to the basics of HTML and CSS. This got me interested and I decided then to try my hand at creating a simple Harry Potter fansite. My daily dose of entertainment consisted of writing charms, potions and ",
-    "1-phrase": "lines of code",
+      "I am a fan of all things functional and beautifully designed. Development of web apps, though, has a special place in my heart. I found my way to programming and web dev in general some years ago during a school lecture, which introduced us to the basics of HTML and CSS. This got me interested and I decided then to try my hand at ",
+    "1-phrase": "creating webpages",
     "1-b":
-      ", trying to figure out how to liven up the - now well past its prime - static look of the pages.",
+      " about the world of Harry Potter. My daily dose of entertainment consisted of writing charms, potions and line of code, trying to figure out how to liven up the - now well past its prime - static look of the pages.",
     "2-a":
       "A long time has passed since then and although, study- and career-wise my path eventually led to a different field, I've often spent my free time making graphics and solving various programming challenges out of curiosity. The need to move pictures and ",
     "2-phrase": "graphics with purpose",
@@ -26,10 +26,10 @@ const about: aboutProps = {
     code: "about",
     title: "Kdo jsem...",
     "1-a":
-      "Jsem příznivec všech věcí, které dobře fungují a vypadají. Vývoj webových aplikací má však v mém srdci zvláštní místo. S programováním a vůbec nějakými základy webového developmentu jsem se poprvé setkala před lety ve škole, kde jsme si představili HTML a CSS. Já se tehdy rozhodla vytvořit si jednoduchou fan stránku o světě Harryho Pottera. Denně jsem se bavila tím, že jsem přepisovala kouzla, lektvary a ",
-    "1-phrase": "řádky kódu",
+      'Jsem příznivec všech věcí, které dobře fungují a vypadají. Vývoj webových aplikací má však v mém srdci zvláštní místo. S programováním a vůbec nějakými základy webového developmentu jsem se poprvé setkala před lety ve škole, kde jsme si představili HTML a CSS, a dostali za úkol náležitě "se vyřádit". Já se tehdy rozhodla ',
+    "1-phrase": "vytvořit stránky",
     "1-b":
-      ", a vymýšlela, jak tehdejší - dnes již přežitou - statickou podobu stránek jakkoli oživit.",
+      " o světě Harryho Pottera. Denně jsem se bavila tím, že jsem přepisovala kouzla, lektvary a řádky kódu, a vymýšlela, jak tehdejší - dnes již přežitou - statickou podobu stránek jakkoli oživit.",
     "2-a":
       "Od té doby uplynula dlouhá doba, a ačkoli mě život studiem i profesně nakonec zavál jiným směrem, volné chvíle jsem často trávila nad grafickými programy a ze zvědavosti i řešením různých programovacích úloh. Chuť rozpohybovat obraz, ",
     "2-phrase": "vizuálně nadchnout",
