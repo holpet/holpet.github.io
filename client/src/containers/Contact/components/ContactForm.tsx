@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import PrimaryLink from "../../../components/Links/PrimaryLink";
 import "./ContactForm.scss";
 import emailjs from "@emailjs/browser";
@@ -38,6 +38,7 @@ const ContactForm = ({ formRef }: props) => {
       setIsSubmitted(true);
       return;
     }
+    setSuccess(true);
     emailjs
       .sendForm(
         "service_holpet_dev",

@@ -20,6 +20,9 @@
   -webkit-text-fill-color: var(--contact-font-color) !important;
   background-color: var(--bg-content-color) !important;
   color: var(--contact-font-color) !important;
+  caret-color: var(--contact-font-color) !important;
+  border: 2px solid var(--bg-content-color);
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .contact-form input {
