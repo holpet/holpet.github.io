@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import "./Work.scss";
 import { butterfly } from "../../assets";
-import { ImEye as Eye, ImEyeBlocked as EyeBlocked } from "react-icons/im";
-import { FaGithub as Github } from "react-icons/fa";
 import work from "../../lib/data/Work";
 import SectionWrapper from "../../components/Wrappers/SectionWrapper";
 import { atomLang } from "../../lib/atoms/Atoms";
 import { useAtom } from "jotai";
+import DescCard from "./components/DescCard";
+import DemoCard from "./components/DemoCard";
 
 const Work = () => {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -54,110 +54,19 @@ const Work = () => {
         {/* ************ container ************** */}
 
         <div className="grid" ref={gridRef}>
-          {/* First row */}
-          {/* ---------------- Project image -------------------- */}
-          <div
-            className="grid-item"
-            data-aos="fade-right"
-            data-aos-duration="1500"
-          >
-            <div className="grid-title">#1</div>
-            <div
-              className="grid-image"
-              style={{
-                backgroundImage: `url(${work[activeLang].projects[0].img})`,
-              }}
-            ></div>
-            <div className="grid-links">
-              <div
-                className="grid-github"
-                onClick={() => {
-                  window.open(work[activeLang].projects[0].github, "_blank");
-                }}
-              >
-                <Github className="gh" />
-              </div>
-              <div
-                className="grid-url"
-                onClick={() => {
-                  window.open(work[activeLang].projects[0].web, "_blank");
-                }}
-              >
-                <Eye className="eye" />
-              </div>
-            </div>
-          </div>
-          {/* ---------------- Project description -------------------- */}
-          <div className="grid-item">
-            <div></div> {/* decor div */}
-            <div className="grid-description" data-aos="fade-left">
-              <p>{work[activeLang].projects[0].name}</p>
-              <p>○ {work[activeLang].projects[0].languages}</p>
-              <p>○ {work[activeLang].projects[0].frameworks}</p>
-              <br />
-              <p>{work[activeLang].projects[0].description}</p>
-            </div>
-          </div>
-          {/* Second row */}
-          {/* ---------------- Project description -------------------- */}
-          <div className="grid-item">
-            <div className="grid-description">
-              <p>{work[activeLang].projects[1].name}</p>
-              <p>○ {work[activeLang].projects[1].languages}</p>
-              <p>○ {work[activeLang].projects[1].frameworks}</p>
-              <br />
-              <p>{work[activeLang].projects[1].description}</p>
-            </div>
-            <div></div> {/* decor div */}
-          </div>
-          {/* ---------------- Project image -------------------- */}
-          <div className="grid-item">
-            <div className="grid-title">#2</div>
-            <div className="grid-links" style={{ zIndex: "2" }}>
-              <div
-                className="grid-github"
-                onClick={() => {
-                  window.open(work[activeLang].projects[1].github, "_blank");
-                }}
-              >
-                <Github className="gh" />
-              </div>
-              <div
-                className="grid-url"
-                onClick={() => {
-                  window.open(work[activeLang].projects[1].web, "_blank");
-                }}
-              >
-                <Eye className="eye" />
-              </div>
-            </div>
-            <div
-              className="grid-image"
-              style={{
-                backgroundImage: `url(${work[activeLang].projects[1].img})`,
-                zIndex: "1",
-              }}
-            ></div>
-          </div>
-
-          {/* +++++++++++++++++++++++++++++++++++ */}
-          {/* +++++++++++++++++++++++++++++++++++ */}
-          {/* Third row */}
-          <div className="grid-item">
-            <div></div>
-          </div>
-          <div className="grid-item">
-            <div></div>
-            <div>UUUUUF</div>
-          </div>
-          {/* Fourth row */}
-          <div className="grid-item">
-            <div>HAAAAA</div>
-            <div></div>
-          </div>
-          <div className="grid-item">
-            <div></div>
-          </div>
+          {work[activeLang].projects.map((project: any, idx: number) =>
+            idx % 2 === 0 ? (
+              <>
+                <DemoCard project={project} idx={idx} key={idx} />
+                <DescCard project={project} idx={idx} key={idx} />
+              </>
+            ) : (
+              <>
+                <DescCard project={project} idx={idx} key={idx} />
+                <DemoCard project={project} idx={idx} key={idx} />
+              </>
+            )
+          )}
         </div>
       </SectionWrapper>
     </div>

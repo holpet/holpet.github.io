@@ -25,7 +25,7 @@ const work: workProps = {
         languages: "Javascript, HTML, CSS",
         frameworks: "Node.js with Express, EJS, MongoDB",
         description:
-          "App with the basic funtionality of a social network site like Twitter. Only with cats and therefore much cuter. Users can post messages and images - anonymously or with a registered profile they can customize (icon, bg, description etc.). All messages, pictures and other data are persisted in a database and can be deleted by user. Search functionality allows for fast lookups.",
+          "App with the basic funtionality of a social network site like Twitter. Only with cats and therefore much cuter 😼. Users can post messages and images - anonymously or with a registered profile they can customize (icon, bg, description etc.). All messages, pictures and other data are persisted in a database and can be deleted by user. Search functionality allows for fast lookups.",
         img: demo2,
         github: "https://github.com/holpet/chatbox",
         web: "https://chatbox-app.onrender.com/",
@@ -75,7 +75,7 @@ const work: workProps = {
         languages: "Javascript, HTML, CSS",
         frameworks: "Node.js with Express, EJS, MongoDB",
         description:
-          "Appka se základní funkcionalitou sociální sítě jako je Twitter. Tentokrát však se vzorem kočky, a proto o mnoho roztomilejší. Uživatelé mohou posílat zprávy a obrázky - anonymně nebo pod svým registrovaným účtem, přičemž profil lze přizpůsobit (úprava ikon, pozadí, popisu atd.). Všechna data jsou ukládána do databáze a mohou být smazána. Funkce vyhledávání příspěvků.",
+          "Appka se základní funkcionalitou sociální sítě jako je Twitter. Tentokrát však se vzorem kočky, a proto o mnoho roztomilejší 😼. Uživatelé mohou posílat zprávy a obrázky - anonymně nebo pod svým registrovaným účtem, přičemž profil lze přizpůsobit (úprava ikon, pozadí, popisu atd.). Všechna data jsou ukládána do databáze a mohou být smazána. Funkce vyhledávání příspěvků.",
         img: demo2,
         github: "https://github.com/holpet/chatbox",
         web: "https://chatbox-app.onrender.com/",
