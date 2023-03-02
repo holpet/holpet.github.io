@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PrimaryLink from "../../../components/Links/PrimaryLink";
 import "./ContactForm.scss";
 import emailjs from "@emailjs/browser";
@@ -24,6 +24,18 @@ const ContactForm = ({ formRef }: props) => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+
+  const successMessageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (success === null) return;
+    const timeout = setTimeout(() => {
+      successMessageRef.current?.classList.add("hide");
+    }, 5000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [success]);
 
   function handleOnSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -127,7 +139,10 @@ const ContactForm = ({ formRef }: props) => {
         spellCheck="false"
         placeholder={contact[activeLang].textfield}
       />
-      <div className={`${success === null && "hide"}`}>
+      <div
+        ref={successMessageRef}
+        className={`success-msg ${success === null && "hide"}`}
+      >
         {success ? contact[activeLang].message : contact[activeLang].error}
       </div>
       <PrimaryLink text={contact[activeLang].link} elemType="submit" />
