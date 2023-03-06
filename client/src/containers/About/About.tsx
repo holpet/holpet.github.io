@@ -4,8 +4,22 @@ import { atomLang } from "../../lib/atoms/Atoms";
 import { useAtom } from "jotai";
 import "./About.scss";
 
+/*
+            <div>
+              {textArr1.map((text: string, idx: number) =>
+                idx % 2 === 0 ? (
+                  text
+                ) : (
+                  <span className="primary-span">{text}</span>
+                )
+              )}
+            </div>
+*/
+
 const About = () => {
   const [activeLang] = useAtom(atomLang);
+  const textArr1 = about[activeLang]["1"].split("*");
+  const textArr2 = about[activeLang]["2"].split("*");
 
   return (
     <div id="about-section">
@@ -18,37 +32,52 @@ const About = () => {
           {/* ITEM 1 */}
           <div className="grid-item" data-aos="fade-right">
             <div>
-              {about[activeLang]["1-a"]}
-              <span className="primary-span">
-                {about[activeLang]["1-phrase"]}
-              </span>
-              {about[activeLang]["1-b"]}
+              {textArr1.map((text: string, idx: number) =>
+                idx % 2 === 0 ? (
+                  text
+                ) : (
+                  <span className="primary-span">{text}</span>
+                )
+              )}
             </div>
+
             <div className="box1"></div>
           </div>
           {/* ITEM 2 */}
           <div className="grid-item">
             <div></div>
             <div>
-              <div data-aos="zoom-in">{about[activeLang]["1-phrase"]}</div>
+              <div data-aos="zoom-in">
+                {textArr1.map(
+                  (text: string, idx: number) => idx % 2 !== 0 && text
+                )}
+                ...
+              </div>
             </div>
           </div>
           {/* ITEM 3 */}
           <div className="grid-item">
             <div></div>
             <div>
-              <div data-aos="zoom-in">{about[activeLang]["2-phrase"]}</div>
+              <div data-aos="zoom-in">
+                ...
+                {textArr2.map(
+                  (text: string, idx: number) => idx % 2 !== 0 && text
+                )}
+              </div>
             </div>
           </div>
           {/* ITEM 4 */}
           <div className="grid-item" data-aos="fade-left">
             <div className="box2"></div>
             <div>
-              {about[activeLang]["2-a"]}
-              <span className="secondary-span">
-                {about[activeLang]["2-phrase"]}
-              </span>
-              {about[activeLang]["2-b"]}
+              {textArr2.map((text: string, idx: number) =>
+                idx % 2 === 0 ? (
+                  text
+                ) : (
+                  <span className="secondary-span">{text}</span>
+                )
+              )}
             </div>
           </div>
         </div>

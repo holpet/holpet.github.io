@@ -9,6 +9,7 @@ const DescCard = ({ project, idx }: any) => {
         <p>{project.name}</p>
         <p>○ {project.languages}</p>
         <p>○ {project.frameworks}</p>
+        <p style={{ fontSize: "0.8em" }}>{project.an}</p>
         <br />
         <p>{project.description}</p>
       </div>

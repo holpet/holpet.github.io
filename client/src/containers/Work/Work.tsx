@@ -7,6 +7,7 @@ import { atomLang } from "../../lib/atoms/Atoms";
 import { useAtom } from "jotai";
 import DescCard from "./components/DescCard";
 import DemoCard from "./components/DemoCard";
+import PrimaryLink from "../../components/Links/PrimaryLink";
 
 const Work = () => {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -68,6 +69,11 @@ const Work = () => {
             )
           )}
         </div>
+        <PrimaryLink
+          text={work[activeLang].link}
+          elemType="link"
+          url="https://github.com/holpet"
+        />
       </SectionWrapper>
     </div>
   );

@@ -8,6 +8,7 @@ const work: workProps = {
   en: {
     code: "work",
     title: "What I've done...",
+    link: "more work",
     projects: [
       {
         name: "E-commerce Web",
@@ -58,6 +59,7 @@ const work: workProps = {
   cz: {
     code: "work",
     title: "Co jsem vytvořila...",
+    link: "další práce",
     projects: [
       {
         name: "E-commerce Web",
@@ -79,7 +81,7 @@ const work: workProps = {
         img: demo2,
         github: "https://github.com/holpet/chatbox",
         web: "https://chatbox-app.onrender.com/",
-        an: "kvůli limitu serveru je k načtení dema potřeba až 1 min",
+        an: "*kvůli limitu serveru je k načtení dema potřeba až 1 min",
       },
       {
         name: "Keeper App",

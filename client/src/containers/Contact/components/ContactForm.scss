@@ -63,13 +63,11 @@
 .contact-form .success-msg {
   visibility: visible;
   opacity: 1;
-  height: auto;
   transition: all 200ms ease-in-out;
 }
 
 .contact-form .success-msg.hide {
   visibility: hidden;
   opacity: 0;
-  height: auto;
   transition: all 3000ms ease-in-out;
 }
