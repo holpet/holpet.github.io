@@ -8,6 +8,7 @@ import { useAtom } from "jotai";
 import DescCard from "./components/DescCard";
 import DemoCard from "./components/DemoCard";
 import PrimaryLink from "../../components/Links/PrimaryLink";
+import React from "react";
 
 const Work = () => {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -57,15 +58,15 @@ const Work = () => {
         <div className="grid" ref={gridRef}>
           {work[activeLang].projects.map((project: any, idx: number) =>
             idx % 2 === 0 ? (
-              <>
-                <DemoCard project={project} idx={idx} key={idx} />
-                <DescCard project={project} idx={idx} key={idx} />
-              </>
+              <React.Fragment key={idx}>
+                <DemoCard project={project} idx={idx} />
+                <DescCard project={project} idx={idx} />
+              </React.Fragment>
             ) : (
-              <>
-                <DescCard project={project} idx={idx} key={idx} />
-                <DemoCard project={project} idx={idx} key={idx} />
-              </>
+              <React.Fragment key={idx}>
+                <DescCard project={project} idx={idx} />
+                <DemoCard project={project} idx={idx} />
+              </React.Fragment>
             )
           )}
         </div>

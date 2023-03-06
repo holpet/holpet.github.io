@@ -8,7 +8,7 @@
 
 .about .grid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
   column-count: 2;
   gap: 2vw 2vw;

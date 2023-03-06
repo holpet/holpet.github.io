@@ -14,7 +14,7 @@ interface props {
 const FlipCard = ({ card }: props) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [activeLang] = useAtom(atomLang);
-  const textAr = skills[activeLang].text1.split("MERN");
+  const textAr = skills[activeLang].text2.split("MERN");
 
   useEffect(() => {
     employObserver(cardRef);
@@ -46,14 +46,18 @@ const FlipCard = ({ card }: props) => {
         <div className="card-text-container">
           <div>
             <p>
-              <span className="first-letter">{textAr[0].charAt(0)}</span>
-              {textAr[0].substring(1)}
-              <b className="skill-para">MERN</b>
-              {textAr[1]}
+              <span className="first-letter">
+                {skills[activeLang].text1.substring(0, 1)}
+              </span>
+              {skills[activeLang].text1.substring(1)}
             </p>
           </div>
           <div>
-            <p>{skills[activeLang].text2}</p>
+            <p>
+              {textAr[0]}
+              <b className="skill-para">MERN</b>
+              {textAr[1]}
+            </p>
           </div>
           <img src={boat_purple} className={`skill-rotated`} />
         </div>

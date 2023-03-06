@@ -4,18 +4,6 @@ import { atomLang } from "../../lib/atoms/Atoms";
 import { useAtom } from "jotai";
 import "./About.scss";
 
-/*
-            <div>
-              {textArr1.map((text: string, idx: number) =>
-                idx % 2 === 0 ? (
-                  text
-                ) : (
-                  <span className="primary-span">{text}</span>
-                )
-              )}
-            </div>
-*/
-
 const About = () => {
   const [activeLang] = useAtom(atomLang);
   const textArr1 = about[activeLang]["1"].split("*");
@@ -36,7 +24,9 @@ const About = () => {
                 idx % 2 === 0 ? (
                   text
                 ) : (
-                  <span className="primary-span">{text}</span>
+                  <span className="primary-span" key={idx}>
+                    {text}
+                  </span>
                 )
               )}
             </div>
@@ -75,7 +65,9 @@ const About = () => {
                 idx % 2 === 0 ? (
                   text
                 ) : (
-                  <span className="secondary-span">{text}</span>
+                  <span className="secondary-span" key={idx}>
+                    {text}
+                  </span>
                 )
               )}
             </div>
