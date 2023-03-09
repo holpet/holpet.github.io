@@ -30,7 +30,7 @@ const work: workProps = {
         img: demo2,
         github: "https://github.com/holpet/chatbox",
         web: "https://chatbox-app.onrender.com/",
-        an: "demo may take up to 1 min to load due to server limitations",
+        an: "/ demo may take up to 1 min to load due to server limitations /",
       },
       {
         name: "Keeper App",
@@ -81,7 +81,7 @@ const work: workProps = {
         img: demo2,
         github: "https://github.com/holpet/chatbox",
         web: "https://chatbox-app.onrender.com/",
-        an: "*kvůli limitu serveru je k načtení dema potřeba až 1 min",
+        an: "/ kvůli limitu serveru je k načtení dema potřeba až 1 min /",
       },
       {
         name: "Keeper App",

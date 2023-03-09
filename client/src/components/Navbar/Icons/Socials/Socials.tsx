@@ -8,10 +8,18 @@ const Socials = () => {
 
   return (
     <ul className="social-icons">
-      <a href="https://github.com/holpet" onClick={() => setIsClosed(true)}>
+      <a
+        href="https://github.com/holpet"
+        target="_blank"
+        onClick={() => setIsClosed(true)}
+      >
         <Github id="github" />
       </a>
-      <a href="https://github.com/holpet" onClick={() => setIsClosed(true)}>
+      <a
+        href="https://github.com/holpet"
+        target="_blank"
+        onClick={() => setIsClosed(true)}
+      >
         <CV id="cv" />
       </a>
     </ul>

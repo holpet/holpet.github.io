@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
 import handleThemeSwap from "../../../../lib/utils/ThemeSwapper";
 
-const Themes = () => {
+const ThemeHandler = () => {
   const [, setIsClosed] = useAtom(closed);
   const [modeTheme, setModeTheme] = useState(
     window.localStorage.getItem("theme") || "dark"
@@ -43,4 +43,4 @@ const Themes = () => {
   );
 };
 
-export default Themes;
+export default ThemeHandler;

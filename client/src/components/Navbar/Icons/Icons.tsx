@@ -1,6 +1,6 @@
 import "./Icons.scss";
 import Flags from "./Flags/Flags";
-import Themes from "./Themes/Themes";
+import Themes from "./ThemeHandler/ThemeHandler";
 import Socials from "./Socials/Socials";
 
 const Icons = () => {
