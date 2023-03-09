@@ -28,14 +28,14 @@
   </head>
   <body>
     <script>
-      // get stored color theme
+      // is there a stored color theme?
       const theme = window.localStorage.getItem("theme");
       const body = window.document.getElementsByTagName("body")[0];
       if (theme) {
         body.style.backgroundColor = theme === "dark" ? "#1d1d1d" : "#e4e4e4";
         body.style.color = theme === "dark" ? "#fbfeff" : "#575757";
       }
-      // or get default color theme
+      // if not, then choose default color theme
       else {
         body.style.backgroundColor = "#1d1d1d";
         body.style.color = "#fbfeff";
